@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'CroissantOne';
+  src: local('CroissantOne'), url('../../public/fonts/CroissantOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumPenScript';
+  src: local('NanumPenScript'), url('../../public/fonts/NanumPenScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'CroissantOne', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* 스크롤바 스타일 지정 */
+*::-webkit-scrollbar {
+  width: 0 /* 스크롤바의 너비 */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0); /* 스크롤바 색상 */
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0); /* 스크롤바 색상 */
+}

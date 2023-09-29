@@ -1,0 +1,17 @@
+@import './_colors.scss';
+
+.introContainer {
+
+  .backgroundImg {
+    height: 830px;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url('../../public/images/main.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    z-index: -10;
+  }
+}

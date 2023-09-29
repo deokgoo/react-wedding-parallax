@@ -1,0 +1,50 @@
+@import './_colors.scss';
+
+.animation {
+  .stg1 {
+    z-index: 20;
+    .title {
+      margin-top: 80px;
+      text-align: center;
+    }
+    .subTitle {
+      color: #7c7c7c;
+      font-size: 14px;
+      text-align: center;
+    }
+    .name {
+      text-align: center;
+      font-family: 'NanumPenScript', sans-serif;
+      font-size: 46px;
+      line-height: 46px;
+      font-weight: lighter;
+      color: #000;
+      margin: 80px 0 0 0;
+      padding: 0;
+    }
+    .date {
+      margin-top: 120px;
+      color: #7c7c7c;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  .intro {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('../../public/images/intro4.jpg');
+    //background-size: 70% 70%; /* 이미지를 90%로 축소 */
+    background-position: center;
+    background-repeat: no-repeat;
+    //filter: brightness(110%) blur(5px); /* 배경 이미지에만 효과 적용 */
+  }
+  h1,
+  h2,
+  h3{
+    margin: 0;
+    padding: 0;
+  }
+}
