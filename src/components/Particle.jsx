@@ -1,6 +1,6 @@
-import { tsParticles } from "https://cdn.jsdelivr.net/npm/tsparticles-engine/+esm";
-import { loadFull, tsParticles as tsp,  } from "https://cdn.jsdelivr.net/npm/tsparticles/+esm";
-import { loadCardsShape } from "https://cdn.jsdelivr.net/npm/tsparticles-shape-cards/+esm";
+import { tsParticles } from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
+import { loadCardsShape } from 'tsparticles-shape-cards';
 import { useEffect } from 'react';
 
 async function loadParticles(options) {
