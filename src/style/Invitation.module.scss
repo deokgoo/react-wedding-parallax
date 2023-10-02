@@ -1,0 +1,22 @@
+@import './_card-mixin.scss';
+
+.container {
+  @include card-styles;
+  font-family: 'NanumPenScript', sans-serif;
+  .text {
+    font-size: 28px;
+    line-height: 2;
+    text-align: center;
+  }
+  .parent {
+    font-size: 22px;
+
+    .name {
+      font-size: 28px;
+    }
+  }
+  .place {
+    font-size: 22px;
+    text-align: center;
+  }
+}

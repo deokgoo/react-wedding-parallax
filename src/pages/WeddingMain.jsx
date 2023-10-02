@@ -2,7 +2,8 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Intro from '../components/Intro';
-import Invitation1 from '../components/Invitation1';
+import IntroContent from '../components/IntroContent';
+import Invitation from '../components/Invitation';
 import Invitation2 from '../components/Invitation2';
 import Notification from '../components/Notification';
 import Place from '../components/Place';
@@ -12,20 +13,15 @@ import styles from '../style/WeddingMain.module.scss';
 const WeddingMain = () => {
   return (
     <main>
-      <Parallax className={styles.animation} pages={5}>
+      <Parallax className={styles.main} pages={5}>
+        {/* STG1*/}
         <ParallaxLayer
           className={styles.stg1}
           offset={0}
           factor={1}
           speed={0.5}
         >
-          <h1 className={styles.title}>AT LAST.</h1>
-          <h2 className={styles.subTitle}>SAVE THE DATE FOR THE WEDDING OF</h2>
-          <h3 className={styles.name}>최지선 & 김덕구</h3>
-          <h2 className={styles.date}>
-            SATURDAY. MARCH 09. 2024 13:30 <br/>
-            해군호텔W웨딩홀 노블레스홀
-          </h2>
+          <IntroContent />
         </ParallaxLayer>
         <ParallaxLayer
           className={styles.intro}
@@ -48,7 +44,7 @@ const WeddingMain = () => {
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={1} factor={1}>
-          <Invitation1 />
+          <Invitation />
         </ParallaxLayer>
 
         {/* STG3*/}
