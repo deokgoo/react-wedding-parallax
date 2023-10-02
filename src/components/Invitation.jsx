@@ -1,8 +1,10 @@
 import styles from '../style/Invitation.module.scss';
+import decoration from '../util/img/decoration.png';
 
 const Invitation = () => {
   return <>
     <div className={styles.container}>
+      <img className={styles.decoration} src={decoration} alt="decoration"/>
       <p className={styles.text}>
         어제의 나와 내가 우리가 되어<br/>
         저희 두 사람 이제 같은 길을 걷고자 합니다. <br/>
