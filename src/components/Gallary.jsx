@@ -6,6 +6,9 @@ const Gallary = () => {
   const colRef2 = useRef(null);
 
   useEffect(() => {
+    if (!colRef1.current) return;
+    if (!colRef2.current) return;
+
     const addAnimation = () => {
       colRef1.current.classList.add('touchHold');
       colRef2.current.classList.add('touchHold');
