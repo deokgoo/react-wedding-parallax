@@ -29,12 +29,15 @@ const Gallary = () => {
       el.addEventListener('touchmove', addAnimation);
     }
 
-    bindEvent(colRef1.current);
-    bindEvent(colRef2.current);
+    const colRef1Copy = colRef1.current;
+    const colRef2Copy = colRef2.current;
+
+    bindEvent(colRef1Copy);
+    bindEvent(colRef2Copy);
 
     return () => {
-      if (!colRef1.current) return;
-      if (!colRef2.current) return;
+      if (!colRef1Copy) return;
+      if (!colRef2Copy) return;
 
       const removeBindEvent = (el) => {
         el.removeEventListener('mousedown', addAnimation);
@@ -46,11 +49,10 @@ const Gallary = () => {
         el.removeEventListener('touchmove', addAnimation);
       }
 
-      removeBindEvent(colRef1.current);
-      removeBindEvent(colRef2.current);
+      removeBindEvent(colRef1Copy);
+      removeBindEvent(colRef2Copy);
     }
-  }, [colRef1, colRef2]
-  )
+  }, []);
 
   return <>
     <div className={styles.container}>
