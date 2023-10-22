@@ -4,7 +4,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import Intro from '../components/Intro';
 import IntroContent from '../components/IntroContent';
 import Invitation from '../components/Invitation';
-import Invitation2 from '../components/Invitation2';
+import Gallary from '../components/Gallary';
 import Notification from '../components/Notification';
 import Place from '../components/Place';
 
@@ -26,7 +26,7 @@ const WeddingMain = () => {
         <ParallaxLayer
           className={styles.intro}
           offset={0}
-          style={{backgroundSize: 'cover'}}
+          style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer
@@ -40,7 +40,7 @@ const WeddingMain = () => {
         <ParallaxLayer
           className={styles.intro}
           offset={1}
-          style={{backgroundSize: 'cover'}}
+          style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={1} factor={1}>
@@ -51,33 +51,33 @@ const WeddingMain = () => {
         <ParallaxLayer
           className={styles.intro}
           offset={2}
-          style={{backgroundSize: 'cover'}}
+          style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1} factor={1}>
-          <Invitation2 />
+          <Gallary />
         </ParallaxLayer>
 
         {/* STG4*/}
         <ParallaxLayer
           className={styles.intro}
           offset={3}
-          style={{backgroundSize: 'cover'}}
+          style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={1} factor={1}>
-          <Notification/>
+          <Notification />
         </ParallaxLayer>
 
         {/* STG5*/}
         <ParallaxLayer
           className={styles.intro}
           offset={4}
-          style={{backgroundSize: 'cover'}}
+          style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1} factor={1}>
-          <Place/>
+          <Place />
         </ParallaxLayer>
       </Parallax>
     </main>

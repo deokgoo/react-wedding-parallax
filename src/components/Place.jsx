@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
+
 const Place = () => {
+  useEffect(() => {
+
+  }, [])
+
   return <>
-    <h1>Place</h1>
+    <div id="map"></div>
   </>
 }
 

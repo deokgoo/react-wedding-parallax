@@ -1,6 +1,6 @@
 const Notification = () => {
   return <>
-    <h1>Notification</h1>
+    <h1>오시는길</h1>
   </>
 }
 

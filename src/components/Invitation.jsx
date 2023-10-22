@@ -4,6 +4,7 @@ import decoration from '../util/img/decoration.png';
 const Invitation = () => {
   return <>
     <div className={styles.container}>
+      <h1 className={styles.title}>초 대 합 니 다</h1>
       <img className={styles.decoration} src={decoration} alt="decoration"/>
       <p className={styles.text}>
         어제의 나와 내가 우리가 되어<br/>

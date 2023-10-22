@@ -22,6 +22,10 @@ body {
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* 스크롤바 스타일 지정 */
 *::-webkit-scrollbar {
   width: 0 /* 스크롤바의 너비 */
