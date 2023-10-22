@@ -6,7 +6,7 @@ const Place = () => {
   }, [])
 
   return <>
-    <div id="map"></div>
+    <h1 id="map">오시는길</h1>
   </>
 }
 

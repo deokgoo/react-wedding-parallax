@@ -1,6 +1,6 @@
 const Notification = () => {
   return <>
-    <h1>오시는길</h1>
+    <h1>방명록</h1>
   </>
 }
 

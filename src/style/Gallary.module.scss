@@ -1,0 +1,65 @@
+@import './_card-mixin.scss';
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-150vh);
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.container {
+  @include card-styles;
+  height: 100vh;
+
+  .title {
+    color: #A68484;
+    margin-bottom: 30px;
+  }
+
+  .imageContainer {
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid white;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 100%;
+
+    .col1 {
+      width: 48%;
+      margin-bottom: 1%; /* 이미지 간 간격을 설정합니다. */
+      animation: moveDown 6s linear infinite; /* 애니메이션을 4초 동안 반복합니다. */
+      
+      img {
+        width: 100%;
+      }
+
+      &:global(.touchHold),
+      &:hover {
+        animation-play-state: paused; /* hover 시 애니메이션 일시 중지 */
+      }
+    }
+  
+
+    .col2 {
+      width: 48%;
+      margin-bottom: 1%; /* 이미지 간 간격을 설정합니다. */
+      animation: moveDown 6s linear infinite; /* 애니메이션을 4초 동안 반복합니다. */
+
+      img {
+        width: 100%;
+      }
+
+      &:global(.touchHold),
+      &:hover {
+        animation-play-state: paused; /* hover 시 애니메이션 일시 중지 */
+      }
+    }
+  }
+}
