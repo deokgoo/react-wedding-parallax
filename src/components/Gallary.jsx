@@ -33,22 +33,22 @@ const Gallary = () => {
     bindEvent(colRef2.current);
 
     return () => {
-      colRef1.current.removeEventListener('mousedown', addAnimation);
-      colRef1.current.removeEventListener('mouseup', addAnimation);
-      colRef1.current.removeEventListener('mousemove', addAnimation);
+      if (!colRef1.current) return;
+      if (!colRef2.current) return;
 
-      colRef1.current.removeEventListener('touchstart', addAnimation);
-      colRef1.current.removeEventListener('touchend', removeAnimation);
-      colRef1.current.removeEventListener('touchmove', addAnimation);
+      const removeBindEvent = (el) => {
+        el.removeEventListener('mousedown', addAnimation);
+        el.removeEventListener('mouseup', addAnimation);
+        el.removeEventListener('mousemove', addAnimation);
 
-      colRef2.current.removeEventListener('mousedown', addAnimation);
-      colRef2.current.removeEventListener('mouseup', addAnimation);
-      colRef2.current.removeEventListener('mousemove', addAnimation);
+        el.removeEventListener('touchstart', addAnimation);
+        el.removeEventListener('touchend', removeAnimation);
+        el.removeEventListener('touchmove', addAnimation);
+      }
 
-      colRef2.current.removeEventListener('touchstart', addAnimation);
-      colRef2.current.removeEventListener('touchend', removeAnimation);
-      colRef2.current.removeEventListener('touchmove', addAnimation);
-    }
+      removeBindEvent(colRef1.current);
+      removeBindEvent(colRef2.current);
+    }, [colRef1, colRef2]
   })
 
   return <>
