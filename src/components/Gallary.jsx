@@ -48,8 +48,9 @@ const Gallary = () => {
 
       removeBindEvent(colRef1.current);
       removeBindEvent(colRef2.current);
-    }, [colRef1, colRef2]
-  })
+    }
+  }, [colRef1, colRef2]
+  )
 
   return <>
     <div className={styles.container}>
