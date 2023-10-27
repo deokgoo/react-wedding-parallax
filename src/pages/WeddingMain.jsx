@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { notification } from 'antd';
+import { message } from 'antd';
 
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
@@ -13,13 +13,13 @@ import Place from '../components/Place';
 import styles from '../style/WeddingMain.module.scss';
 
 const WeddingMain = () => {
-  const [api, contextHolder] = notification.useNotification();
+  const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
-    api.info({
-      message: '공지',
-      description:
-        '현재 개발중입니다. 양해 부탁드립니다.',
+    messageApi.open({
+      type: 'info',
+      content: '현재 개발중입니다 by d9',
+      duration: 1.5,
     });
   }, [])
 
@@ -56,7 +56,7 @@ const WeddingMain = () => {
           style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={1} factor={1}>
+        <ParallaxLayer offset={1} factor={1}>
           <Invitation />
         </ParallaxLayer>
 
@@ -67,7 +67,7 @@ const WeddingMain = () => {
           style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={1} factor={1}>
+        <ParallaxLayer offset={2} factor={1}>
           <Gallary />
         </ParallaxLayer>
 
@@ -78,8 +78,8 @@ const WeddingMain = () => {
           style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={1} factor={1}>
-          <Notification />
+        <ParallaxLayer offset={4} speed={1} factor={1}>
+          <Place />
         </ParallaxLayer>
 
         {/* STG5*/}
@@ -89,8 +89,8 @@ const WeddingMain = () => {
           style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={1} factor={1}>
-          <Place />
+        <ParallaxLayer offset={3} speed={1} factor={1}>
+          <Notification />
         </ParallaxLayer>
       </Parallax>
     </main>

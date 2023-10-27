@@ -1,89 +1,57 @@
-import { useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper/modules";
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
 import styles from '../style/Gallary.module.scss';
 
+const images = [
+  '/images/wedding/1.jpeg',
+  '/images/wedding/2.jpeg',
+  '/images/wedding/3.jpeg',
+  '/images/wedding/4.jpeg',
+  '/images/jeju/1.JPG',
+  '/images/jeju/2.JPG',
+  '/images/jeju/3.JPG',
+  '/images/jeju/4.JPG',
+  '/images/jeju/5.JPG',
+];
+
 const Gallary = () => {
-  const colRef1 = useRef(null);
-  const colRef2 = useRef(null);
-
-  useEffect(() => {
-    if (!colRef1.current) return;
-    if (!colRef2.current) return;
-
-    const addAnimation = () => {
-      colRef1.current.classList.add('touchHold');
-      colRef2.current.classList.add('touchHold');
-    }
-
-    const removeAnimation = () => {
-      colRef1.current.classList.remove('touchHold');
-      colRef2.current.classList.remove('touchHold');
-    }
-
-    const bindEvent = (el) => {
-      el.addEventListener('mousedown', addAnimation);
-      el.addEventListener('mouseup', addAnimation);
-      el.addEventListener('mousemove', addAnimation);
-
-      el.addEventListener('touchstart', addAnimation);
-      el.addEventListener('touchend', removeAnimation);
-      el.addEventListener('touchmove', addAnimation);
-    }
-
-    const colRef1Copy = colRef1.current;
-    const colRef2Copy = colRef2.current;
-
-    bindEvent(colRef1Copy);
-    bindEvent(colRef2Copy);
-
-    return () => {
-      if (!colRef1Copy) return;
-      if (!colRef2Copy) return;
-
-      const removeBindEvent = (el) => {
-        el.removeEventListener('mousedown', addAnimation);
-        el.removeEventListener('mouseup', addAnimation);
-        el.removeEventListener('mousemove', addAnimation);
-
-        el.removeEventListener('touchstart', addAnimation);
-        el.removeEventListener('touchend', removeAnimation);
-        el.removeEventListener('touchmove', addAnimation);
-      }
-
-      removeBindEvent(colRef1Copy);
-      removeBindEvent(colRef2Copy);
-    }
-  }, []);
-
   return <>
     <div className={styles.container}>
       <h1 className={styles.title}>갤 러 리</h1>
-      <div className={styles.imageContainer}>
-        <div className={styles.col1} ref={colRef1}>
-          <img src="/images/jeju/1.JPG" alt="jeju1" />
-          <img src="/images/jeju/2.JPG" alt="jeju2" />
-          <img src="/images/jeju/3.JPG" alt="jeju3" />
-          <img src="/images/jeju/4.JPG" alt="jeju4" />
-          <img src="/images/jeju/5.JPG" alt="jeju5" />
-          <img src="/images/jeju/1.JPG" alt="jeju1" />
-          <img src="/images/jeju/2.JPG" alt="jeju2" />
-          <img src="/images/jeju/3.JPG" alt="jeju3" />
-          <img src="/images/jeju/4.JPG" alt="jeju4" />
-          <img src="/images/jeju/5.JPG" alt="jeju5" />
-        </div>
-        <div className={styles.col2} ref={colRef2}>
-          <img src="/images/jeju/3.JPG" alt="jeju3" />
-          <img src="/images/jeju/4.JPG" alt="jeju4" />
-          <img src="/images/jeju/5.JPG" alt="jeju5" />
-          <img src="/images/jeju/1.JPG" alt="jeju1" />
-          <img src="/images/jeju/2.JPG" alt="jeju2" />
-          <img src="/images/jeju/3.JPG" alt="jeju3" />
-          <img src="/images/jeju/4.JPG" alt="jeju4" />
-          <img src="/images/jeju/5.JPG" alt="jeju5" />
-          <img src="/images/jeju/1.JPG" alt="jeju1" />
-          <img src="/images/jeju/2.JPG" alt="jeju2" />
-        </div>
-      </div>
-
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        }}
+        pagination={true}
+        autoplay={{
+          delay: 700,
+          disableOnInteraction: true,
+        }}
+        initialSlide={1}
+        modules={[EffectCoverflow]}
+        className="mySwiper"
+      >
+        {images.map(src =>
+          <div className={styles.swiperContainer}>
+            <SwiperSlide className={styles.swiperContainer}>
+              <img className={styles.swiperImg} src={src} alt={src} />
+            </SwiperSlide>
+          </div>
+        )}
+      </Swiper>
     </div>
   </>
 }
