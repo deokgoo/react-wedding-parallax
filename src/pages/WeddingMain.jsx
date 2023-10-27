@@ -21,7 +21,7 @@ const WeddingMain = () => {
       content: '현재 개발중입니다 by d9',
       duration: 1.5,
     });
-  }, [])
+  }, [messageApi])
 
   return (
     <main>
