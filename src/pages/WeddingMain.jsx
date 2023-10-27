@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Button, notification, Space } from 'antd';
+
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Intro from '../components/Intro';
@@ -11,8 +13,20 @@ import Place from '../components/Place';
 import styles from '../style/WeddingMain.module.scss';
 
 const WeddingMain = () => {
+  const [api, contextHolder] = notification.useNotification();
+
+
+  useEffect(() => {
+    api.info({
+      message: '공지',
+      description:
+        '현재 모청 개발중입니다. 미완성된 페이지가 많으니 양해 부탁드립니다.',
+    });
+  }, [api])
+
   return (
     <main>
+      {contextHolder}
       <Parallax className={styles.main} pages={5}>
         {/* STG1*/}
         <ParallaxLayer
