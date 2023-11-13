@@ -11,6 +11,7 @@ import Notification from '../components/Notification';
 import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
+import ContactModal from '../components/ContactModal';
 
 const WeddingMain = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -19,7 +20,7 @@ const WeddingMain = () => {
     messageApi.open({
       type: 'info',
       content: '현재 개발중입니다 by d9',
-      duration: 1.5,
+      duration: 3,
     });
   }, [messageApi])
 
@@ -37,12 +38,6 @@ const WeddingMain = () => {
           <IntroContent />
         </ParallaxLayer>
         <ParallaxLayer
-          className={styles.intro}
-          offset={0}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
-        </ParallaxLayer>
-        <ParallaxLayer
           offset={0}
           factor={1}
         >
@@ -50,24 +45,13 @@ const WeddingMain = () => {
         </ParallaxLayer>
 
         {/* STG2*/}
-        <ParallaxLayer
-          className={styles.intro}
-          offset={1}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} factor={1}>
+        <ParallaxLayer offset={1} factor={1} speed={1}>
           <Invitation />
+          <ContactModal isOpen={false} />
         </ParallaxLayer>
 
         {/* STG3*/}
-        <ParallaxLayer
-          className={styles.intro}
-          offset={2}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
-        </ParallaxLayer>
-        <ParallaxLayer offset={2} factor={1}>
+        <ParallaxLayer offset={2} factor={1} speed={1}>
           <Gallary />
         </ParallaxLayer>
 
