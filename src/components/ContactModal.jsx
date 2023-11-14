@@ -8,9 +8,10 @@ const ContactModal = ({ isOpen }) => {
     setIsModalOpen(false);
   }
 
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+  // const handleCancel = () => {
+  //   setIsModalOpen(false);
+  // };
+
   return (
     <>
       <Modal open={isModalOpen} onOk={handleOk}>
