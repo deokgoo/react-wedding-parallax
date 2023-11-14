@@ -16,6 +16,7 @@
 .container {
   @include card-styles;
   height: 100vh;
+  background-color: rgb(249, 235, 235);
 
   .title {
     color: #A68484;

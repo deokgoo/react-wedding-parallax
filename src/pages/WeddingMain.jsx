@@ -12,6 +12,7 @@ import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
 import ContactModal from '../components/ContactModal';
+import Schedule from '../components/Schedule';
 
 const WeddingMain = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -45,25 +46,25 @@ const WeddingMain = () => {
         </ParallaxLayer>
 
         {/* STG2*/}
-        <ParallaxLayer offset={1} factor={1} speed={1}>
+        <ParallaxLayer offset={1} factor={1} speed={0.1}>
           <Invitation />
           <ContactModal isOpen={false} />
         </ParallaxLayer>
 
         {/* STG3*/}
-        <ParallaxLayer offset={2} factor={1} speed={1}>
+        <ParallaxLayer
+          className={styles.intro}
+          offset={2}
+          style={{ backgroundSize: 'cover', backgroundColor: '#a98b8bd4d' }}
+          factor={1}>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} factor={1} speed={0.1}>
           <Gallary />
         </ParallaxLayer>
 
         {/* STG4*/}
-        <ParallaxLayer
-          className={styles.intro}
-          offset={3}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
-        </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={1} factor={1}>
-          <Place />
+        <ParallaxLayer offset={3} factor={1} speed={1}>
+          <Schedule />
         </ParallaxLayer>
 
         {/* STG5*/}
@@ -73,7 +74,18 @@ const WeddingMain = () => {
           style={{ backgroundSize: 'cover' }}
           factor={1}>
         </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={1} factor={1}>
+        <ParallaxLayer offset={4} speed={1} factor={1}>
+          <Place />
+        </ParallaxLayer>
+
+        {/* STG6*/}
+        <ParallaxLayer
+          className={styles.intro}
+          offset={5}
+          style={{ backgroundSize: 'cover' }}
+          factor={1}>
+        </ParallaxLayer>
+        <ParallaxLayer offset={6} speed={1} factor={1}>
           <Notification />
         </ParallaxLayer>
       </Parallax>

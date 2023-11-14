@@ -1,5 +1,7 @@
 import React from 'react';
 import { Badge, Calendar } from 'antd';
+import dayjs from 'dayjs';
+
 const getListData = (value) => {
   let listData;
   switch (value.date()) {
@@ -95,6 +97,6 @@ const Schedule = () => {
     if (info.type === 'month') return monthCellRender(current);
     return info.originNode;
   };
-  return <Calendar cellRender={cellRender} />;
+  return <Calendar cellRender={cellRender} value={dayjs(new Date('2023.03.09'))} style={{ maxHeight: '300px' }} />;
 };
 export default Schedule;
