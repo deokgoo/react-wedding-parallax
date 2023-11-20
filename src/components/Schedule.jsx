@@ -38,8 +38,6 @@ const Schedule = () => {
       "November",
       "December"
     ];
-    const box = document.getElementById("box");
-    const theme = document.getElementById("box");
 
     function update() {
       let now = new Date('2024.03.09');
