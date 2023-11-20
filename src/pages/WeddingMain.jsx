@@ -7,8 +7,8 @@ import Intro from '../components/Intro';
 import IntroContent from '../components/IntroContent';
 import Invitation from '../components/Invitation';
 import Gallery from '../components/Gallery';
-import Notification from '../components/Notification';
-import Place from '../components/Place';
+// import Notification from '../components/Notification';
+// import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
 import ContactModal from '../components/ContactModal';
