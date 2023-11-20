@@ -52,27 +52,6 @@ const Schedule = () => {
       })
     }
 
-    function changeTheme() {
-      let check = document.getElementById("check");
-      if (check.checked) {
-        document.body.style.background = "grey";
-        theme.style.color = "#e0e0e0";
-        box.style.color = "#e0e0e0";
-        box.style.boxShadow =
-          "9px 9px 18px #5f5f5f, -9px -9px 18px #999";
-        check.checked = false;
-        theme.style.transform = "rotateZ(180deg)";
-      } else {
-        document.body.style.background = "#e0e0e0";
-        theme.style.color = "grey";
-        box.style.color = "grey";
-        box.style.boxShadow =
-          "9px 9px 18px #bebebe, -9px -9px 18px #fff";
-        check.checked = true;
-        theme.style.transform = "rotateZ(-180deg)";
-      }
-    }
-
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
