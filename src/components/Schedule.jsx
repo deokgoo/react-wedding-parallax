@@ -40,7 +40,7 @@ const Schedule = () => {
     ];
 
     function update() {
-      let now = new Date('2024.03.09');
+      const now = new Date('2024-03-09');
       setDateText({
         date: now.getDate(),
         day: days[now.getDay()],
