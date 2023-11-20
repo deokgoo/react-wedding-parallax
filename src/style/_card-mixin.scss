@@ -1,7 +1,8 @@
 @mixin card-styles {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
-  padding-top: 120px;
+  padding: 5%;
+  padding-top: 8%;
 }

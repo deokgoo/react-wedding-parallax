@@ -16,7 +16,11 @@
 .container {
   @include card-styles;
   height: 100vh;
-  background-color: rgb(249, 235, 235);
+  font-family: 'NanumPenScript', sans-serif;
+
+  .subTitle {
+    color: #C2B2B2;
+  }
 
   .title {
     color: #A68484;
@@ -66,7 +70,7 @@
 }
 
 .swiperContainer {
-  width: 100vw;
+  width: 50vw;
   display: flex;
   justify-content: center;
 

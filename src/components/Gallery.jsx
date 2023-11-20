@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,9 +19,10 @@ const images = [
   '/images/jeju/5.JPG',
 ];
 
-const Gallary = () => {
+const Gallery = () => {
   return <>
     <div className={styles.container}>
+      <h2 className={styles.subTitle}>GALLERY</h2>
       <h1 className={styles.title}>갤 러 리</h1>
       <Swiper
         effect={"coverflow"}
@@ -37,23 +38,27 @@ const Gallary = () => {
         }}
         pagination={true}
         autoplay={{
-          delay: 700,
-          disableOnInteraction: true,
+          delay: 2000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
         }}
         initialSlide={1}
-        modules={[EffectCoverflow]}
+        loop={true}
+        modules={[EffectCoverflow, Autoplay]}
         className="mySwiper"
       >
         {images.map(src =>
-          <div className={styles.swiperContainer}>
+          <div className={styles.swiperContainer} key={src}>
             <SwiperSlide className={styles.swiperContainer}>
               <img className={styles.swiperImg} src={src} alt={src} />
             </SwiperSlide>
           </div>
         )}
       </Swiper>
+
+      <div style={{ height: '30vh', width: '100%', backgroundColor: 'rgb(225, 227, 230)', marginTop: '30px' }}></div>
     </div>
   </>
 }
 
-export default Gallary;
+export default Gallery;

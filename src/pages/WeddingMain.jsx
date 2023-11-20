@@ -6,13 +6,14 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import Intro from '../components/Intro';
 import IntroContent from '../components/IntroContent';
 import Invitation from '../components/Invitation';
-import Gallary from '../components/Gallary';
+import Gallery from '../components/Gallery';
 import Notification from '../components/Notification';
 import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
 import ContactModal from '../components/ContactModal';
 import Schedule from '../components/Schedule';
+import BackgroundLayer from '../components/BackgroundLayer';
 
 const WeddingMain = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -28,7 +29,7 @@ const WeddingMain = () => {
   return (
     <main>
       {contextHolder}
-      <Parallax className={styles.main} pages={5}>
+      <Parallax className={styles.main} pages={4}>
         {/* STG1*/}
         <ParallaxLayer
           className={styles.stg1}
@@ -46,29 +47,36 @@ const WeddingMain = () => {
         </ParallaxLayer>
 
         {/* STG2*/}
-        <ParallaxLayer offset={1} factor={1} speed={0.1}>
+        <ParallaxLayer
+          offset={1}>
+          <BackgroundLayer color="pink" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.1}>
           <Invitation />
           <ContactModal isOpen={false} />
         </ParallaxLayer>
 
         {/* STG3*/}
         <ParallaxLayer
-          className={styles.intro}
-          offset={2}
-          style={{ backgroundSize: 'cover', backgroundColor: '#a98b8bd4d' }}
-          factor={1}>
+          offset={2}>
+          <BackgroundLayer />
         </ParallaxLayer>
-        <ParallaxLayer offset={2} factor={1} speed={0.1}>
-          <Gallary />
+        <ParallaxLayer offset={2} speed={0.1}>
+          <Gallery />
         </ParallaxLayer>
 
         {/* STG4*/}
-        <ParallaxLayer offset={3} factor={1} speed={1}>
+        <ParallaxLayer
+          offset={3}>
+          <BackgroundLayer color="pink" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={3} factor={1} speed={0.1}>
           <Schedule />
         </ParallaxLayer>
+      </Parallax>
 
-        {/* STG5*/}
-        <ParallaxLayer
+      {/* STG5*/}
+      {/* <ParallaxLayer
           className={styles.intro}
           offset={4}
           style={{ backgroundSize: 'cover' }}
@@ -76,10 +84,10 @@ const WeddingMain = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1} factor={1}>
           <Place />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
-        {/* STG6*/}
-        <ParallaxLayer
+      {/* STG6*/}
+      {/* <ParallaxLayer
           className={styles.intro}
           offset={5}
           style={{ backgroundSize: 'cover' }}
@@ -87,9 +95,9 @@ const WeddingMain = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={6} speed={1} factor={1}>
           <Notification />
-        </ParallaxLayer>
-      </Parallax>
-    </main>
+        </ParallaxLayer> */}
+      {/* </Parallax> */}
+    </main >
   );
 };
 

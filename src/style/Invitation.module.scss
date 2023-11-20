@@ -1,4 +1,5 @@
 @import './_card-mixin.scss';
+@import './_colors.scss';
 
 .container {
   @include card-styles;
@@ -9,19 +10,12 @@
   }
 
   .title {
-    margin: 0 0 20px;
+    margin: 0 0 5%;
     color: #89757A;
   }
 
-  .decoration {
-    width: 80px;
-    margin: 15px 0;
-    &.reverse {
-      transform: scaleY(-1);
-    }
-  }
   .text {
-    margin: 0 0 30px;
+    margin: 0 0 5%;
     font-size: 28px;
     line-height: 1.5;
     text-align: center;
@@ -29,7 +23,7 @@
   .parent {
     font-size: 22px;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 8%;
 
     .name {
       font-size: 28px;

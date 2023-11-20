@@ -1,102 +1,117 @@
-import React from 'react';
-import { Badge, Calendar } from 'antd';
-import dayjs from 'dayjs';
+import { useEffect, useRef, useState } from 'react';
+import styles from '../style/Schedule.module.scss';
 
-const getListData = (value) => {
-  let listData;
-  switch (value.date()) {
-    case 8:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event.',
-        },
-        {
-          type: 'success',
-          content: 'This is usual event.',
-        },
-      ];
-      break;
-    case 10:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event.',
-        },
-        {
-          type: 'success',
-          content: 'This is usual event.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event.',
-        },
-      ];
-      break;
-    case 15:
-      listData = [
-        {
-          type: 'warning',
-          content: 'This is warning event',
-        },
-        {
-          type: 'success',
-          content: 'This is very long usual event......',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 1.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 2.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 3.',
-        },
-        {
-          type: 'error',
-          content: 'This is error event 4.',
-        },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-};
-const getMonthData = (value) => {
-  if (value.month() === 8) {
-    return 1394;
-  }
-};
 const Schedule = () => {
-  const monthCellRender = (value) => {
-    const num = getMonthData(value);
-    return num ? (
-      <div className="notes-month">
-        <section>{num}</section>
-        <span>Backlog number</span>
+  const containerRef = useRef(null);
+  const boxRef = useRef(null);
+  const themeRef = useRef(null);
+  const [dateText, setDateText] = useState({
+    date: "",
+    day: "",
+    month: "",
+    year: ""
+  })
+  const [twoHeight, setTwoHeight] = useState(0);
+  const [boxColor, setBoxColor] = useState(null);
+
+  useEffect(() => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ];
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+    const box = document.getElementById("box");
+    const theme = document.getElementById("box");
+
+    function update() {
+      let now = new Date('2024.03.09');
+      setDateText({
+        date: now.getDate(),
+        day: days[now.getDay()],
+        month: months[now.getMonth()],
+        year: now.getFullYear()
+
+      })
+    }
+
+    function changeTheme() {
+      let check = document.getElementById("check");
+      if (check.checked) {
+        document.body.style.background = "grey";
+        theme.style.color = "#e0e0e0";
+        box.style.color = "#e0e0e0";
+        box.style.boxShadow =
+          "9px 9px 18px #5f5f5f, -9px -9px 18px #999";
+        check.checked = false;
+        theme.style.transform = "rotateZ(180deg)";
+      } else {
+        document.body.style.background = "#e0e0e0";
+        theme.style.color = "grey";
+        box.style.color = "grey";
+        box.style.boxShadow =
+          "9px 9px 18px #bebebe, -9px -9px 18px #fff";
+        check.checked = true;
+        theme.style.transform = "rotateZ(-180deg)";
+      }
+    }
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setInterval(update, 1000);
+          setTimeout(() => {
+            setTwoHeight(216);
+            setBoxColor("grey");
+          }, 500);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection);
+    observer.observe(containerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [])
+
+  return (
+    <div className={styles.container} ref={containerRef}>
+      <h2 className={styles.subTitle}>SCHEDULE</h2>
+      <h1 className={styles.title}>일정</h1>
+      <div className={styles.theme} ref={themeRef}>
+        <input type="checkbox" className={styles.check} checked />
+        <i class="fa-solid fa-circle-half-stroke"></i>
       </div>
-    ) : null;
-  };
-  const dateCellRender = (value) => {
-    const listData = getListData(value);
-    return (
-      <ul className="events">
-        {listData.map((item) => (
-          <li key={item.content}>
-            <Badge status={item.type} text={item.content} />
-          </li>
-        ))}
-      </ul>
-    );
-  };
-  const cellRender = (current, info) => {
-    if (info.type === 'date') return dateCellRender(current);
-    if (info.type === 'month') return monthCellRender(current);
-    return info.originNode;
-  };
-  return <Calendar cellRender={cellRender} value={dayjs(new Date('2023.03.09'))} style={{ maxHeight: '300px' }} />;
+      <div className={styles.box} ref={boxRef} style={{ color: boxColor }}>
+        <div>
+          <div className={styles.month}>{dateText.month}</div>
+        </div>
+        <div className={styles.two} style={{ height: twoHeight }}>
+          <div className={styles.day}>{dateText.day}</div>
+          <div className={styles.date}>{dateText.date}</div>
+          <div className={styles.year}>{dateText.year}</div>
+        </div>
+      </div>
+    </div >
+  )
 };
 export default Schedule;

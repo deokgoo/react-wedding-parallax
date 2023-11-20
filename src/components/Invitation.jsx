@@ -5,7 +5,7 @@ import styles from '../style/Invitation.module.scss';
 
 const Invitation = () => {
   return <>
-    <div className={styles.container}>
+    <div className={styles.container} >
       <h2 className={styles.subTitle}>INVITATION</h2>
       <h1 className={styles.title}>초대합니다</h1>
       <p className={styles.text}>
@@ -14,17 +14,17 @@ const Invitation = () => {
         저희가 내딛는 첫 걸음에 부디 오셔서 <br />
         따뜻한 사랑으로 축복해 주십시오.
       </p>
-      <img src="/images/seo_jsd.JPG" width="100%" alt="wedding" />
+      <img src="/images/seo_jsd.JPG" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
       <hr />
       <p className={styles.parent}>
         <span className={styles.name}>김준일</span> • <span className={styles.name}>홍상희</span> 의 장남 <span className={styles.name}>덕구</span><br />
         <span className={styles.name}>최화묵</span> • <span className={styles.name}>유소영</span> 의 장녀 <span className={styles.name}>지선</span><br />
       </p>
-      <Button icon={<PhoneOutlined />} primaryColor={'#D1C8C8'}>
+      <Button icon={<PhoneOutlined />} primarycolor={'#D1C8C8'}>
         연락번호 확인
       </Button>
       <hr />
-    </div>
+    </div >
   </>
 }
 
