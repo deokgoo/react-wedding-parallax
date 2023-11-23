@@ -47,10 +47,10 @@ const Gallery = () => {
         modules={[EffectCoverflow, Autoplay]}
         className="mySwiper"
       >
-        {images.map(src =>
-          <div className={styles.swiperContainer} key={src}>
-            <SwiperSlide className={styles.swiperContainer}>
-              <img className={styles.swiperImg} src={src} alt={src} />
+        {images.map((src, idx) =>
+          <div className={styles.swiperContainer} key={src + idx}>
+            <SwiperSlide className={styles.swiperContainer} key={src + idx}>
+              <img className={styles.swiperImg} src={src} alt={src + idx} />
             </SwiperSlide>
           </div>
         )}

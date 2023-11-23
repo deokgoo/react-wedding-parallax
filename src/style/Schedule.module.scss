@@ -21,6 +21,7 @@
   .box {
     width: 240px;
     height: auto;
+    margin-top: 30%;
     background: transparent;
     box-shadow: 9px 9px 18px #bebebe, -9px -9px 18px #ffffff;
     backdrop-filter: blur(25px);
@@ -29,10 +30,6 @@
     color: transparent;
     text-align: center;
     overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   .two {
     height: 0;
@@ -67,4 +64,11 @@
   .check {
     display: none;
   }
+}
+.flipdownWrapper {
+  margin-top: 15%;
+  margin-left: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
