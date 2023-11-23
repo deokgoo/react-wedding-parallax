@@ -1,17 +1,15 @@
-"use strict";
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { let descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 export const FlipDown = function () {
   function FlipDown(uts) {
-    var el = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "flipdown";
-    var opt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    let el = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "flipdown";
+    let opt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
     _classCallCheck(this, FlipDown);
 
@@ -77,7 +75,7 @@ export const FlipDown = function () {
       if (this.epoch - this.now < 0) {
         this.countdownEnded = true;
 
-        if (this.hasEndedCallback != null) {
+        if (this.hasEndedCallback !== null) {
           this.hasEndedCallback();
           this.hasEndedCallback = null;
         }
@@ -91,7 +89,7 @@ export const FlipDown = function () {
   }, {
     key: "_parseOptions",
     value: function _parseOptions(opt) {
-      var headings = ["day", "hour", "min", "sec"];
+      let headings = ["day", "hour", "min", "sec"];
 
       if (opt.headings && opt.headings.length === 4) {
         headings = opt.headings;
@@ -118,25 +116,25 @@ export const FlipDown = function () {
         this.daysremaining = Math.floor((this.epoch - this.now) / 86400).toString().length;
       }
 
-      var dayRotorCount = this.daysremaining <= 2 ? 2 : this.daysremaining;
+      let dayRotorCount = this.daysremaining <= 2 ? 2 : this.daysremaining;
 
-      for (var i = 0; i < dayRotorCount + 6; i++) {
+      for (let i = 0; i < dayRotorCount + 6; i++) {
         this.rotors.push(this._createRotor(0));
       }
 
-      var dayRotors = [];
+      let dayRotors = [];
 
-      for (var i = 0; i < dayRotorCount; i++) {
+      for (let i = 0; i < dayRotorCount; i++) {
         dayRotors.push(this.rotors[i]);
       }
 
       this.element.appendChild(this._createRotorGroup(dayRotors, 0));
-      var count = dayRotorCount;
+      let count = dayRotorCount;
 
-      for (var i = 0; i < 3; i++) {
-        var otherRotors = [];
+      for (let i = 0; i < 3; i++) {
+        let otherRotors = [];
 
-        for (var j = 0; j < 2; j++) {
+        for (let j = 0; j < 2; j++) {
           otherRotors.push(this.rotors[count]);
           count++;
         }
@@ -158,9 +156,9 @@ export const FlipDown = function () {
   }, {
     key: "_createRotorGroup",
     value: function _createRotorGroup(rotors, rotorIndex) {
-      var rotorGroup = document.createElement("div");
+      let rotorGroup = document.createElement("div");
       rotorGroup.className = "rotor-group";
-      var dayRotorGroupHeading = document.createElement("div");
+      let dayRotorGroupHeading = document.createElement("div");
       dayRotorGroupHeading.className = "rotor-group-heading";
       dayRotorGroupHeading.setAttribute("data-before", this.opts.headings[rotorIndex]);
       rotorGroup.appendChild(dayRotorGroupHeading);
@@ -170,13 +168,13 @@ export const FlipDown = function () {
   }, {
     key: "_createRotor",
     value: function _createRotor() {
-      var v = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      var rotor = document.createElement("div");
-      var rotorLeaf = document.createElement("div");
-      var rotorLeafRear = document.createElement("figure");
-      var rotorLeafFront = document.createElement("figure");
-      var rotorTop = document.createElement("div");
-      var rotorBottom = document.createElement("div");
+      let v = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      let rotor = document.createElement("div");
+      let rotorLeaf = document.createElement("div");
+      let rotorLeafRear = document.createElement("figure");
+      let rotorLeafFront = document.createElement("figure");
+      let rotorTop = document.createElement("div");
+      let rotorBottom = document.createElement("div");
       rotor.className = "rotor";
       rotorLeaf.className = "rotor-leaf";
       rotorLeafRear.className = "rotor-leaf-rear";
@@ -194,7 +192,7 @@ export const FlipDown = function () {
     key: "_tick",
     value: function _tick() {
       this.now = this._getTime();
-      var diff = this.epoch - this.now <= 0 ? 0 : this.epoch - this.now;
+      let diff = this.epoch - this.now <= 0 ? 0 : this.epoch - this.now;
       this.clockValues.d = Math.floor(diff / 86400);
       diff -= this.clockValues.d * 86400;
       this.clockValues.h = Math.floor(diff / 3600);
@@ -210,9 +208,9 @@ export const FlipDown = function () {
   }, {
     key: "_updateClockValues",
     value: function _updateClockValues() {
-      var _this = this;
+      let _this = this;
 
-      var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      let init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       this.clockStrings.d = pad(this.clockValues.d, 2);
       this.clockStrings.h = pad(this.clockValues.h, 2);
       this.clockStrings.m = pad(this.clockValues.m, 2);
@@ -226,23 +224,23 @@ export const FlipDown = function () {
       });
 
       function rotorTopFlip() {
-        var _this2 = this;
+        let _this2 = this;
 
         this.rotorTop.forEach(function (el, i) {
-          if (el.textContent != _this2.clockValuesAsString[i]) {
+          if (el.textContent !== _this2.clockValuesAsString[i]) {
             el.textContent = _this2.clockValuesAsString[i];
           }
         });
       }
 
       function rotorLeafRearFlip() {
-        var _this3 = this;
+        let _this3 = this;
 
         this.rotorLeafRear.forEach(function (el, i) {
-          if (el.textContent != _this3.clockValuesAsString[i]) {
+          if (el.textContent !== _this3.clockValuesAsString[i]) {
             el.textContent = _this3.clockValuesAsString[i];
             el.parentElement.classList.add("flipped");
-            var flip = setInterval(function () {
+            let flip = setInterval(function () {
               el.parentElement.classList.remove("flipped");
               clearInterval(flip);
             }.bind(_this3), 500);
