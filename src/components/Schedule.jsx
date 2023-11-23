@@ -47,8 +47,8 @@ const Schedule = () => {
 
   return (
     <div className={styles.container} ref={containerRef}>
-      <h2 className={styles.subTitle}>SCHEDULE</h2>
-      <h1 className={styles.title}>일정</h1>
+      <h2 className={styles.subTitle}>DATE</h2>
+      <h1 className={styles.title}>일시</h1>
       <div className={styles.theme} ref={themeRef}>
         <input type="checkbox" className={styles.check} checked={true} readOnly={true} />
         <i className="fa-solid fa-circle-half-stroke"></i>

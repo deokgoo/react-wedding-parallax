@@ -8,7 +8,7 @@ import IntroContent from '../components/IntroContent';
 import Invitation from '../components/Invitation';
 import Gallery from '../components/Gallery';
 // import Notification from '../components/Notification';
-// import Place from '../components/Place';
+import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
 import ContactModal from '../components/ContactModal';
@@ -29,7 +29,7 @@ const WeddingMain = () => {
   return (
     <main>
       {contextHolder}
-      <Parallax className={styles.main} pages={4}>
+      <Parallax className={styles.main} pages={5}>
         {/* STG1*/}
         <ParallaxLayer
           className={styles.stg1}
@@ -73,18 +73,18 @@ const WeddingMain = () => {
         <ParallaxLayer offset={3} factor={1} speed={0.1}>
           <Schedule />
         </ParallaxLayer>
-      </Parallax>
 
-      {/* STG5*/}
-      {/* <ParallaxLayer
-          className={styles.intro}
-          offset={4}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
+        {/* STG5*/}
+        <ParallaxLayer
+          offset={4}>
+          <BackgroundLayer />
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={1} factor={1}>
           <Place />
-        </ParallaxLayer> */}
+        </ParallaxLayer>
+      </Parallax>
+
+
 
       {/* STG6*/}
       {/* <ParallaxLayer

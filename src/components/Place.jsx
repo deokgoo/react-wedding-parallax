@@ -17,7 +17,6 @@ const Place = () => {
           <div className={styles.iconWrapper}>
             <div className={styles.icon}><CarOutlined color='red' /></div>
           </div>
-
           <p className={styles.content}>무료 셔틀버스 운행</p>
         </div>
 
