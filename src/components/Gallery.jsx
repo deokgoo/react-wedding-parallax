@@ -1,5 +1,7 @@
+import { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { Image } from 'antd';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -20,11 +22,21 @@ const images = [
 ];
 
 const Gallery = () => {
+  const swiperRef = useRef(null)
+
+  const handlePreivewVisible = (visible) => {
+    console.log(visible);
+    swiperRef.current.swiper.autoplay.stop();
+
+    if (visible) swiperRef.current.swiper.autoplay.stop();
+    else swiperRef.current.swiper.autoplay.start();
+  }
   return <>
     <div className={styles.container}>
       <h2 className={styles.subTitle}>GALLERY</h2>
       <h1 className={styles.title}>갤 러 리</h1>
       <Swiper
+        ref={swiperRef}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -50,7 +62,7 @@ const Gallery = () => {
         {images.map((src, idx) =>
           <div className={styles.swiperContainer} key={src + idx}>
             <SwiperSlide className={styles.swiperContainer} key={src + idx}>
-              <img className={styles.swiperImg} src={src} alt={src + idx} />
+              <Image className={styles.swiperImg} src={src} alt={src + idx} preview={{ onVisibleChange: handlePreivewVisible }} />
             </SwiperSlide>
           </div>
         )}
