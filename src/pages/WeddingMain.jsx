@@ -7,7 +7,7 @@ import Intro from '../components/Intro';
 import IntroContent from '../components/IntroContent';
 import Invitation from '../components/Invitation';
 import Gallery from '../components/Gallery';
-// import Notification from '../components/Notification';
+import GuestBook from '../components/GuestBook';
 import Place from '../components/Place';
 
 import styles from '../style/WeddingMain.module.scss';
@@ -29,7 +29,7 @@ const WeddingMain = () => {
   return (
     <main>
       {contextHolder}
-      <Parallax className={styles.main} pages={5}>
+      <Parallax className={styles.main} pages={6.3}>
         {/* STG1*/}
         <ParallaxLayer
           className={styles.stg1}
@@ -76,27 +76,26 @@ const WeddingMain = () => {
 
         {/* STG5*/}
         <ParallaxLayer
-          offset={4}>
-          <BackgroundLayer />
+          offset={4}
+          factor={1.3}
+        >
+          <BackgroundLayer style={{ height: '150vh' }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={1} factor={1}>
+        <ParallaxLayer offset={4} factor={1.3} speed={0.1}>
           <Place />
         </ParallaxLayer>
-      </Parallax>
 
-
-
-      {/* STG6*/}
-      {/* <ParallaxLayer
-          className={styles.intro}
-          offset={5}
-          style={{ backgroundSize: 'cover' }}
-          factor={1}>
+        {/* STG6*/}
+        <ParallaxLayer
+          offset={5.3}
+          factor={1}
+        >
+          <BackgroundLayer color="pink" />
         </ParallaxLayer>
-        <ParallaxLayer offset={6} speed={1} factor={1}>
-          <Notification />
-        </ParallaxLayer> */}
-      {/* </Parallax> */}
+        <ParallaxLayer offset={5.3} speed={0.1} factor={1}>
+          <GuestBook />
+        </ParallaxLayer>
+      </Parallax>
     </main >
   );
 };

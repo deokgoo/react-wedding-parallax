@@ -1,0 +1,19 @@
+@import './_card-mixin.scss';
+
+.container {
+  @include card-styles;
+
+  height: 100vh;
+  
+
+  .subTitle {
+    font-family: 'NanumPenScript', sans-serif;
+    color: #C2B2B2;
+  }
+
+  .title {
+    font-family: 'NanumPenScript', sans-serif;
+    margin: 0 0 40px;
+    color: #89757A;
+  }
+}

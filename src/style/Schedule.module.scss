@@ -21,7 +21,7 @@
   .box {
     width: 240px;
     height: auto;
-    margin-top: 30%;
+    margin-top: 10%;
     background: transparent;
     box-shadow: 9px 9px 18px #bebebe, -9px -9px 18px #ffffff;
     backdrop-filter: blur(25px);
@@ -71,4 +71,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.countDownWrapper {
+  margin-top: 10%;
+  font-size: 25px;
+
+  .strength {
+    margin-left: 10px;
+    color: rgb(255, 114, 82);
+    font-weight: 700;
+  }
 }
