@@ -25,7 +25,7 @@ const Place = () => {
           </div>
           <div className={styles.contentWrapper}>
             <p className={styles.content}>무료 셔틀버스 운행</p>
-            <p className={styles.subscription}>1호선 대방역 3번 출구 / 7호선, 신림선 보라매역 5번 출구 (예식시간 1시간 30분 전부터 15-20분 간격 운행)</p>
+            <p className={styles.subscription}>1호선 대방역 3번 출구 / 7호선, 신림선 보라매역 5번 출구 <br /> (예식시간 1시간 30분 전부터 15-20분 간격 운행)</p>
           </div>
         </div>
         <div className={styles.item}>
