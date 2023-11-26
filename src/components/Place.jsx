@@ -3,8 +3,12 @@ import { ReactComponent as SubwayIcon } from '../util/icon/train-subway-solid.sv
 import { ReactComponent as CarIcon } from '../util/icon/car-solid.svg';
 
 import styles from '../style/Place.module.scss';
+import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
 
 const Place = () => {
+  // instead of window.naver.maps
+  const navermaps = useNavermaps()
+
 
   return <>
     <div className={styles.container}>
@@ -14,7 +18,24 @@ const Place = () => {
       <h3 className={styles.place}>해군호텔W웨딩홀 노블레스홀</h3>
       <p className={styles.subPlace}>서울시 영등포구 가마산로 538 (신길동 2001-4)</p>
       <div className={styles.mapContainer}>
-        <div className={styles.map}></div>
+        <div className={styles.map}>
+          <MapDiv
+            style={{
+              width: '100%',
+              height: '200px',
+            }}
+          >
+            <NaverMap
+              defaultCenter={new navermaps.LatLng(37.503609, 126.915614)}
+              defaultZoom={15}
+            >
+              <Marker
+                defaultPosition={new navermaps.LatLng(37.503609, 126.915614)}
+              />
+            </NaverMap>
+          </MapDiv>
+
+        </div>
         <div className={styles.otherMap}></div>
       </div>
 
