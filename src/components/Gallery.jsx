@@ -21,6 +21,17 @@ const images = [
   '/images/jeju/5.JPG',
 ];
 
+const otherImages = [
+  '/images/wedding/2.jpeg',
+  '/images/wedding/3.jpeg',
+  '/images/wedding/4.jpeg',
+  '/images/jeju/1.JPG',
+  '/images/jeju/2.JPG',
+  '/images/jeju/3.JPG',
+  '/images/jeju/4.JPG',
+  '/images/jeju/5.JPG',
+]
+
 const Gallery = () => {
   const swiperRef = useRef(null)
 
@@ -68,7 +79,15 @@ const Gallery = () => {
         )}
       </Swiper>
 
-      <div style={{ height: '30vh', width: '100%', backgroundColor: 'rgb(225, 227, 230)', marginTop: '30px' }}></div>
+      <div style={{ height: '165px', width: '100%', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        <Image.PreviewGroup>
+          {otherImages
+            .map((src, idx) =>
+              <Image className={styles.swiperImg} src={src} alt={src + idx} preview={{ onVisibleChange: handlePreivewVisible }} width={'80px'} height={'80px'} style={{ objectFit: 'cover' }} />
+            )}
+        </Image.PreviewGroup>
+
+      </div>
     </div>
   </>
 }
