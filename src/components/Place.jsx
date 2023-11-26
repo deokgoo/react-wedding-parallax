@@ -2,13 +2,15 @@ import { ReactComponent as BusIcon } from '../util/icon/bus-solid.svg';
 import { ReactComponent as SubwayIcon } from '../util/icon/train-subway-solid.svg';
 import { ReactComponent as CarIcon } from '../util/icon/car-solid.svg';
 
+import NaverIcon from '../util/icon/naver.png';
+import KakaoIcon from '../util/icon/kakao.png';
+
 import styles from '../style/Place.module.scss';
 import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
 
 const Place = () => {
   // instead of window.naver.maps
-  const navermaps = useNavermaps()
-
+  const navermaps = useNavermaps();
 
   return <>
     <div className={styles.container}>
@@ -26,17 +28,28 @@ const Place = () => {
             }}
           >
             <NaverMap
-              defaultCenter={new navermaps.LatLng(37.503609, 126.915614)}
-              defaultZoom={15}
+              defaultCenter={new navermaps.LatLng(37.502330, 126.916914)}
+              defaultZoom={14}
             >
               <Marker
+                title="해군호텔W웨딩홀 노블레스홀"
+                visible={true}
                 defaultPosition={new navermaps.LatLng(37.503609, 126.915614)}
               />
             </NaverMap>
           </MapDiv>
 
         </div>
-        <div className={styles.otherMap}></div>
+        <div className={styles.otherMap}>
+          <a href="https://map.naver.com/p/entry/place/13088510?c=16.47,0,0,0,dh" target="_blank" rel="noreferrer">
+            <img src={NaverIcon} width="20" height="20" alt="네이버 공유" />
+            네이버 지도
+          </a>
+          <a href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=8146688&q=%ED%95%B4%EA%B5%B0%ED%98%B8%ED%85%94+W%EC%9B%A8%EB%94%A9%ED%99%80&urlLevel=1&urlX=481320&urlY=1112283" target="_blank" rel="noreferrer">
+            <img src={KakaoIcon} width="20" height="20" alt="카카오 공유" />
+            카카오 지도
+          </a>
+        </div>
       </div>
 
       <div className={styles.infoContainer}>
