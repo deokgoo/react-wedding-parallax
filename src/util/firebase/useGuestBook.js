@@ -8,17 +8,22 @@ const useGuestBook = () => {
     return Object.keys(fetchData).map((x) => ({text: `${fetchData[x]?.content} - ${fetchData[x]?.author}`, value: 10}));
   }
 
-  useEffect(() => {
+  const guestBookFetch = () => {
     readGuestBookListen((fetchData) => {
       const parsedData = parseGuestBook(fetchData);
       setGuestBook(parsedData);
     });
+  }
+
+  useEffect(() => {
+    guestBookFetch();
   }, []);
 
-  const handleWriteGuestBook = ({ username, content }) => {
+  const handleWriteGuestBook = async ({ username, content }) => {
 
     if (username && content && pwd) {
-      writeGuestBook({ username, content });
+      await writeGuestBook({ username, content });
+      guestBookFetch();
     }
   }
 
