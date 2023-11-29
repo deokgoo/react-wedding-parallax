@@ -31,6 +31,7 @@ const useGuestBook = () => {
 
   return {
     guestBook,
+    setGuestBook,
     handleWriteGuestBook,
   }
 };
