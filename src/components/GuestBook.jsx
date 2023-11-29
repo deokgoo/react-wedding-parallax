@@ -53,7 +53,7 @@ const GuestBook = () => {
         })
       })
     }, 3000)
-  }, [])
+  }, [setGuestBook])
 
   return <>
     <div className={styles.container}>
