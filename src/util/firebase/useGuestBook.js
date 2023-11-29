@@ -21,7 +21,7 @@ const useGuestBook = () => {
 
   const handleWriteGuestBook = async ({ username, content }) => {
 
-    if (username && content && pwd) {
+    if (username && content) {
       await writeGuestBook({ username, content });
       guestBookFetch();
     }
