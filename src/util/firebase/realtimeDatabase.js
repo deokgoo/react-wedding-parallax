@@ -28,14 +28,12 @@ export const readGuestBookListen = (snapShotCallback) => {
   });
 }
 
-export const writeGuestBook = ({ username, uid, content, pwd}) => {
+export const writeGuestBook = ({ username, content }) => {
   const db = getDatabase(app);
 
   const postData = {
     author: username,
-    uid: uid,
     content,
-    pwd,
     createdAt: Date.now(),
   };
 

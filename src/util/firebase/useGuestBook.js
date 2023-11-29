@@ -15,10 +15,10 @@ const useGuestBook = () => {
     });
   }, []);
 
-  const handleWriteGuestBook = ({ username, content, pwd }) => {
+  const handleWriteGuestBook = ({ username, content }) => {
 
     if (username && content && pwd) {
-      writeGuestBook({ username, uid, content });
+      writeGuestBook({ username, content });
     }
   }
 
