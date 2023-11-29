@@ -1,31 +1,21 @@
-import { useEffect, useState } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 import { LoadingOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
+import { Spin, Input, Typography, Space, Button } from 'antd';
+
+import useGuestBook from '../util/firebase/useGuestBook';
 
 import styles from '../style/GuestBook.module.scss';
 
 const GuestBook = () => {
-  const [words, setWords] = useState(
-    [
-      { text: '1 - 결혼 축하해 행복해야해 ~~~', value: 10 },
-      { text: '2 - 결혼 축하해 행복해야해 ~~~', value: 10 },
-      { text: '3 - 결혼 축하해 행복해야해 ~~~', value: 10 },
-      { text: '4 - 결혼 축하해 행복해야해 ~~~', value: 10 },
-      { text: '5 - 결혼 축하해 행복해야해 ~~~', value: 10 },
-    ]);
+  const { guestBook, handleWriteGuestBook } = useGuestBook();
 
-  useEffect(() => {
-    setInterval(() => {
-      setWords(words => {
-        // value 랜덤하게 7 ~ 10 사이로 변경
-        const newWords = words.map(word => {
-          return { ...word, value: Math.floor(Math.random() * 7) + 3 }
-        });
-        return newWords;
-      });
-    }, 5000);
-  }, []);
+
+  const registerGuestBookHandler = () => {
+    handleWriteGuestBook({
+      username: 'd9',
+      content: '테스트를 진행합니다. ',
+    });
+  }
 
   return <>
     <div className={styles.container}>
@@ -33,13 +23,26 @@ const GuestBook = () => {
       <h1 className={styles.title}>방명록</h1>
       <div className={styles.wordContainer}>
         <div className={styles.live}><Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} /></div>
-        <ReactWordcloud words={words} options={{
+        <ReactWordcloud words={guestBook} options={{
           randomSeed: new Date().getTime(),
           rotations: 0,
           transitionDuration: 500,
           fontSizes: [16, 22],
         }} />
       </div>
+      <Typography.Title level={5}>Exceed Max</Typography.Title>
+      <Space direction="horizontal">
+        <Input
+          count={{
+            show: true,
+            max: 10,
+          }}
+          defaultValue="Hello, antd!"
+        />
+        <Button style={{ width: 80 }} onClick={registerGuestBookHandler}>
+          save
+        </Button>
+      </Space>
     </div>
   </>
 }

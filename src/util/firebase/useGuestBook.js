@@ -1,41 +1,31 @@
 import { useState, useEffect } from 'react';
 import { readGuestBookListen, writeGuestBook } from './realtimeDatabase';
 
-const useFirebase = () => {
+const useGuestBook = () => {
   const [guestBook, setGuestBook] = useState([]);
-  const [newPost, setNewPost] = useState({
-    username: '',
-    uid: '',
-    content: '',
-    pwd: '',
-  });
 
-  useEffect(() => {
-    readGuestBookListen(setGuestBook);
-  }, []);
-
-  const handleWriteGuestBook = () => {
-    const { username, uid, content, pwd } = newPost;
-
-    if (username && uid && content && pwd) {
-      writeGuestBook({ username, uid, content, pwd });
-    }
+  const parseGuestBook = (fetchData) => {
+    return Object.keys(fetchData).map((x) => ({text: `${fetchData[x]?.content} - ${fetchData[x]?.author}`, value: 10}));
   }
 
-  const handleChangeNewPost = (e) => {
-    const { name, value } = e.target;
-
-    setNewPost({
-      ...newPost,
-      [name]: value,
+  useEffect(() => {
+    readGuestBookListen((fetchData) => {
+      const parsedData = parseGuestBook(fetchData);
+      setGuestBook(parsedData);
     });
+  }, []);
+
+  const handleWriteGuestBook = ({ username, content, pwd }) => {
+
+    if (username && content && pwd) {
+      writeGuestBook({ username, uid, content });
+    }
   }
 
   return {
     guestBook,
     handleWriteGuestBook,
-    handleChangeNewPost,
   }
 };
 
-export default useFirebase;
+export default useGuestBook;
