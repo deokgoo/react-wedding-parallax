@@ -5,7 +5,9 @@ const useGuestBook = () => {
   const [guestBook, setGuestBook] = useState([]);
 
   const parseGuestBook = (fetchData) => {
-    return Object.keys(fetchData).map((x) => ({text: `${fetchData[x]?.content} - ${fetchData[x]?.author}`, value: 10}));
+    if(!fetchData) return [];
+
+    return Object.keys(fetchData).map((x) => ({text: `${fetchData[x]?.content} -${fetchData[x]?.author}-`, value: 10}));
   }
 
   const guestBookFetch = () => {

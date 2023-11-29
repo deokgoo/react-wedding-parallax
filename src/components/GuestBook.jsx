@@ -1,19 +1,25 @@
 import ReactWordcloud from 'react-wordcloud';
-import { LoadingOutlined } from '@ant-design/icons';
+import { UserOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Spin, Input, Typography, Space, Button } from 'antd';
 
 import useGuestBook from '../util/firebase/useGuestBook';
 
 import styles from '../style/GuestBook.module.scss';
+import { useRef } from 'react';
 
 const GuestBook = () => {
+  const formAuthorRef = useRef();
+  const formContentRef = useRef();
   const { guestBook, handleWriteGuestBook } = useGuestBook();
 
 
   const registerGuestBookHandler = () => {
+    const username = formAuthorRef.current?.input?.value;
+    const content = formContentRef.current?.input?.value;
+
     handleWriteGuestBook({
-      username: 'd9',
-      content: '테스트를 진행합니다. ',
+      username,
+      content,
     });
   }
 
@@ -32,15 +38,17 @@ const GuestBook = () => {
       </div>
       <Typography.Title level={5}>Exceed Max</Typography.Title>
       <Space direction="horizontal">
+        <Input placeholder="글쓴이" prefix={<UserOutlined />} ref={formAuthorRef} />
         <Input
           count={{
             show: true,
             max: 10,
           }}
-          defaultValue="Hello, antd!"
+          placeholder="방명록을 남겨주세요."
+          ref={formContentRef}
         />
         <Button style={{ width: 80 }} onClick={registerGuestBookHandler}>
-          save
+          기록
         </Button>
       </Space>
     </div>
