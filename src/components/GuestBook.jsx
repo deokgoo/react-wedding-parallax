@@ -21,6 +21,10 @@ const GuestBook = () => {
       username,
       content,
     });
+
+    // input 을 비워준다.
+    formAuthorRef.current?.input?.value = '';
+    formContentRef.current?.input?.value = '';
   }
 
   return <>
