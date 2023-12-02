@@ -9,7 +9,7 @@ const IntroContent = () => {
     <>
       <h1 className={styles.title}>AT LAST.</h1>
       <h2 className={styles.subTitle}>SAVE THE DATE FOR THE WEDDING OF</h2>
-      <h3 className={styles.name}>김덕구 & 최지선</h3>
+      <h3 className={styles.name}>김덕구 <span>그리고</span> 최지선</h3>
       <div className={styles.animation}>
         <WeddingRing />
       </div>

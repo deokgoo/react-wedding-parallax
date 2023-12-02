@@ -14,6 +14,7 @@ import styles from '../style/WeddingMain.module.scss';
 import ContactModal from '../components/ContactModal';
 import Schedule from '../components/Schedule';
 import BackgroundLayer from '../components/BackgroundLayer';
+import Account from '../components/Account';
 
 const WeddingMain = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -29,7 +30,7 @@ const WeddingMain = () => {
   return (
     <main>
       {contextHolder}
-      <Parallax className={styles.main} pages={6.3}>
+      <Parallax className={styles.main} pages={7.3}>
         {/* STG1*/}
         <ParallaxLayer
           className={styles.stg1}
@@ -93,6 +94,17 @@ const WeddingMain = () => {
           <BackgroundLayer color="pink" />
         </ParallaxLayer>
         <ParallaxLayer offset={5.3} speed={0.1} factor={1}>
+          <Account />
+        </ParallaxLayer>
+
+        {/* STG7*/}
+        <ParallaxLayer
+          offset={6.3}
+          factor={1}
+        >
+          <BackgroundLayer />
+        </ParallaxLayer>
+        <ParallaxLayer offset={6.3} speed={0.1} factor={1}>
           <GuestBook />
         </ParallaxLayer>
       </Parallax>
