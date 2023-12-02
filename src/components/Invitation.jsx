@@ -48,7 +48,6 @@ const data = [
 
 const Invitation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [list, setList] = useState([]);
 
   const modalStyles = {
     header: {
