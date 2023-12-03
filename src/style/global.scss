@@ -3,6 +3,7 @@
   src: local('CroissantOne'), url('../../public/fonts/CroissantOne.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  preload: true;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: local('NanumPenScript'), url('../../public/fonts/NanumPenScript.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  preload: true;
 }
 
 body {
