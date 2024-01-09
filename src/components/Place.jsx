@@ -23,12 +23,6 @@ const Place = () => {
     setDrawerOpen(false);
   }
 
-  const handleSwipeRight = () => {
-    if (touchendX > touchstartX) {
-      setDrawerOpen(false);
-    }
-  }
-
   useEffect(() => {
     // infoContainerRef가 observer 에 감지되면 drawerOpen을 true로 변경
     // infoContainerRef 가 감지되는 기준은 infoContainerRef의 600px 밑으로 감지되면 drawerOpen을 true로 변경
@@ -57,7 +51,10 @@ const Place = () => {
   }, []);
 
   useEffect(() => {
-    handleSwipeRight();
+    if (touchendX > touchstartX) {
+      setDrawerOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [touchendX]);
 
   return <>
