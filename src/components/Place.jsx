@@ -96,7 +96,6 @@ const Place = () => {
           </a>
         </div>
       </div>
-      https://place.map.kakao.com/m/11528867#none
       <div className={styles.infoContainer} ref={infoContainerRef}>
         <div className={styles.item}>
           <div className={styles.iconWrapper}>

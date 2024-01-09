@@ -38,12 +38,12 @@ const items = [
   {
     key: '5',
     label: '신랑측 아버님 김준일 계좌번호',
-    children: <p>3333223353393 카카오뱅크</p>,
+    children: <BankAccountItem bankName={"국민은행"} accountNumber={"573101045897"} iconPath={"/images/icon/kb-icon.webp"} />
   },
   {
     key: '6',
     label: '신랑측 어머님 홍상희 계좌번호',
-    children: <p>3333223353393 카카오뱅크</p>,
+    children: <BankAccountItem bankName={"부산은행"} accountNumber={"1122196794402"} iconPath={"/images/icon/bnk-icon.png"} />,
   },
 ];
 
