@@ -85,7 +85,7 @@ const Invitation = () => {
         <span className={styles.name}>김준일</span> • <span className={styles.name}>홍상희</span> 의 장남 <span className={styles.name}>덕구</span><br />
         <span className={styles.name}>최화묵</span> • <span className={styles.name}>유소영</span> 의 장녀 <span className={styles.name}>지선</span><br />
       </p>
-      <Button icon={<PhoneOutlined />} primarycolor={'#D1C8C8'} onClick={() => setIsModalOpen(true)}>
+      <Button icon={<PhoneOutlined />} primarycolor={'#D1C8C8'} onClick={() => setIsModalOpen(true)} style={{ backgroundColor: '#f8dede', border: '1px solid white' }}>
         연락번호 확인
       </Button>
       <Modal styles={modalStyles} title="연락처" open={isModalOpen} footer={null} closeIcon={null} onCancel={() => setIsModalOpen(false)}>

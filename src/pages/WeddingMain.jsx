@@ -1,6 +1,3 @@
-import React, { useEffect } from 'react';
-import { message } from 'antd';
-
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Intro from '../components/Intro';
@@ -17,19 +14,8 @@ import BackgroundLayer from '../components/BackgroundLayer';
 import Account from '../components/Account';
 
 const WeddingMain = () => {
-  const [messageApi, contextHolder] = message.useMessage();
-
-  useEffect(() => {
-    messageApi.open({
-      type: 'info',
-      content: '현재 개발중입니다 by d9',
-      duration: 3,
-    });
-  }, [messageApi])
-
   return (
     <main>
-      {contextHolder}
       <Parallax className={styles.main} pages={7.3}>
         {/* STG1*/}
         <ParallaxLayer
