@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
-import { Drawer, Card, Space, Tag, Button } from 'antd';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { Drawer, Card, Space, Tag, Button, Tooltip } from 'antd';
+import { ArrowRightOutlined, RightCircleFilled } from '@ant-design/icons';
 
 import { ReactComponent as BusIcon } from '../util/icon/bus-solid.svg';
 import { ReactComponent as SubwayIcon } from '../util/icon/train-subway-solid.svg';
@@ -23,24 +23,12 @@ const Place = () => {
     setDrawerOpen(false);
   }
 
+  const onOpen = () => {
+    setDrawerOpen(true);
+  }
+
   useEffect(() => {
-    // infoContainerRef가 observer 에 감지되면 drawerOpen을 true로 변경
-    // infoContainerRef 가 감지되는 기준은 infoContainerRef의 600px 밑으로 감지되면 drawerOpen을 true로 변경
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setDrawerOpen(true);
-          observer.unobserve(infoContainerRef.current);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1,
-    });
-
-    observer.observe(infoContainerRef.current);
-
+    // 앱 모션 컨트롤 위함
     document.addEventListener('touchstart', e => {
       setTouchstartX(e.changedTouches[0].screenX);
     })
@@ -98,6 +86,14 @@ const Place = () => {
       </div>
       <div className={styles.infoContainer} ref={infoContainerRef}>
         <div className={styles.item}>
+          <Tooltip title="Click!" trigger="click" defaultOpen>
+            <div className={styles.contentWrapper} onClick={onOpen} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+              <Tag color="#86d6fb" style={{ fontSize: '14px', fontFamily: 'CroissantOne', fontWeight: '700', padding: '4px 8px' }}>부산, 대전 전세버스 안내 <RightCircleFilled /> </Tag>
+            </div>
+          </Tooltip>
+
+        </div>
+        <div className={styles.item}>
           <div className={styles.iconWrapper}>
             <BusIcon width={20} height={20} />
           </div>
@@ -112,9 +108,9 @@ const Place = () => {
           </div>
           <div className={styles.contentWrapper}>
             <p className={styles.content}>지하철</p>
-            <p className={styles.subscription}>- 1호선 대방역(19253 정류장) 마을버스 07번 이용 서울해군호텔 하차</p>
-            <p className={styles.subscription}>- 7호선 보라매역 5번 출구에서 200m 영진시장삼거리에서 우회전 300m</p>
-            <p className={styles.subscription}>- 신림선 서울지방병무청역 2번 출구에서 100m 해군회관 앞 사거리에서 우회전 400m</p>
+            <p className={styles.subscription}>- 1호선 대방역(19253 정류장) 마을버스 07번 : 서울해군호텔 하차</p>
+            <p className={styles.subscription}>- 7호선 보라매역 5번 출구 &gt; 200m 영진시장삼거리 우회전 300m</p>
+            <p className={styles.subscription}>- 신림선 서울지방병무청역 2번 출구 &gt; 100m 해군회관 앞 사거리 &gt; 우회전 400m</p>
           </div>
         </div>
         <div className={styles.item}>
@@ -132,7 +128,7 @@ const Place = () => {
           </div>
           <div className={styles.contentWrapper}>
             <p className={styles.content}>승용차</p>
-            <p className={styles.subscription}>주차직원 안내에 따라 해군호텔w웨딩홀 주차장 이용 <br />(2시간 무료 주차) </p>
+            <p className={styles.subscription}>해군호텔w웨딩홀 주차장 이용(2시간 무료) </p>
           </div>
         </div>
       </div>

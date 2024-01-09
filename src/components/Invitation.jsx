@@ -108,7 +108,6 @@ const Invitation = () => {
           )}
         />
       </Modal>
-      <hr />
     </div >
   </>
 }
