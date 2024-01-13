@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Button as AntdButton } from 'antd';
 
-const CopyButton = ({ bankName, numbers }) => {
+const CopyButton = ({ bankName, accountNumber }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const copyToClipboard = () => {
     setIsLoading(true);
 
-    navigator.clipboard.writeText(`${bankName} ${numbers}`);
+    navigator.clipboard.writeText(`${bankName} ${accountNumber}`);
 
     setTimeout(() => {
       setIsLoading(false);
