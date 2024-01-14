@@ -18,12 +18,12 @@ const items = [
   {
     key: '1',
     label: '신부측 최지선 계좌번호',
-    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333212275886"} iconPath={"/images/icon/kakaoBank-icon.png"} />,
+    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333212275886"} iconPath={"/images/icon/kakaoBank-icon.webp"} />,
   },
   {
     key: '2',
     label: '신랑측 김덕구 계좌번호',
-    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333223353393"} iconPath={"/images/icon/kakaoBank-icon.png"} />
+    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333223353393"} iconPath={"/images/icon/kakaoBank-icon.webp"} />
   },
   {
     key: '3',
@@ -33,7 +33,7 @@ const items = [
   {
     key: '4',
     label: '신부측 어머님 유소영 계좌번호',
-    children: <BankAccountItem bankName={"농협"} accountNumber={"54302138361"} iconPath={"/images/icon/nh-icon.png"} />
+    children: <BankAccountItem bankName={"농협"} accountNumber={"54302138361"} iconPath={"/images/icon/nh-icon.webp"} />
   },
   {
     key: '5',
@@ -43,7 +43,7 @@ const items = [
   {
     key: '6',
     label: '신랑측 어머님 홍상희 계좌번호',
-    children: <BankAccountItem bankName={"부산은행"} accountNumber={"1122196794402"} iconPath={"/images/icon/bnk-icon.png"} />,
+    children: <BankAccountItem bankName={"부산은행"} accountNumber={"1122196794402"} iconPath={"/images/icon/bnk-icon.webp"} />,
   },
 ];
 
