@@ -10,14 +10,14 @@ const data = [
     name: '최지선',
     phoneNumber: '010-7300-7029',
     color: '#CE8383',
-    img: '/images/selfi/selfi-js.png',
+    img: '/images/selfi/selfi-js.webp',
   },
   {
     relation: '신랑',
     name: '김덕구',
     phoneNumber: '010-3076-5697',
     color: '#668EAA',
-    img: '/images/selfi/selfi-d9.jpeg',
+    img: '/images/selfi/selfi-d9.webp',
   },
   {
     relation: '신부 아버지',
@@ -79,7 +79,7 @@ const Invitation = () => {
         저희가 내딛는 첫 걸음에 부디 오셔서 <br />
         따뜻한 사랑으로 축복해 주십시오.
       </p>
-      <img src="/images/seo_jsd.JPG" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
+      <img src="/images/seo_jsd.webp" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
       <hr />
       <p className={styles.parent}>
         <span className={styles.name}>김준일</span> • <span className={styles.name}>홍상희</span> 의 장남 <span className={styles.name}>덕구</span><br />
