@@ -79,7 +79,7 @@ const Invitation = () => {
         저희가 내딛는 첫 걸음에 부디 오셔서 <br />
         따뜻한 사랑으로 축복해 주십시오.
       </p>
-      <img src="/images/seo_jsd.webp" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
+      <img src="/images/seo-jsd.webp" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
       <hr />
       <p className={styles.parent}>
         <span className={styles.name}>김준일</span> • <span className={styles.name}>홍상희</span> 의 장남 <span className={styles.name}>덕구</span><br />
