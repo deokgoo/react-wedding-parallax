@@ -20,7 +20,7 @@
   .wordContainer {
     position: relative;
     width: 100%;
-    height: 400px;
+    max-height: 300px;
 
     &::before {
       content: ""; /* 가상 요소에 내용 없음 */
