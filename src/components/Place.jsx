@@ -88,7 +88,7 @@ const Place = () => {
         <div className={styles.item}>
           <Tooltip title="Click!" trigger="click" defaultOpen open={!drawerOpen} placement='top' autoAdjustOverflow={false}>
             <div className={styles.contentWrapper} onClick={onOpen} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
-              <Tag color="#86d6fb" style={{ fontSize: '14px', fontFamily: 'CroissantOne', fontWeight: '700', padding: '4px 8px' }}>부산, 대전 전세버스 안내 <RightCircleFilled /> </Tag>
+              <Tag color="#86d6fb" style={{ fontSize: '14px', fontFamily: 'Croissant One', fontWeight: '700', padding: '4px 8px' }}>부산, 대전 전세버스 안내 <RightCircleFilled /> </Tag>
             </div>
           </Tooltip>
 

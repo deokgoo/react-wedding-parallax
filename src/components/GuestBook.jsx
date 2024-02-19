@@ -15,7 +15,7 @@ const WorldCloud = memo(({ words }) => {
       rotations: 0,
       transitionDuration: 500,
       fontSizes: [16, 22],
-      fontFamily: 'CroissantOne, serif',
+      fontFamily: 'Croissant One, serif',
     }}
   />
 });
@@ -30,12 +30,17 @@ const GuestBook = () => {
   useEffect(() => {
     setInterval(() => {
       setGuestBook((prev) => {
-        return prev.map((item) => {
+        const newGuestBook = prev.map((item) => {
           return {
             ...item,
             value: Math.floor(Math.random() * 10) % 2 === 0 ? 1 : 10,
           }
         })
+
+        // newGuestBook 에서 랜덤으로 한 다음 8개를 뽑아서 반환한다.
+        const randomGuestBook = newGuestBook.sort(() => Math.random() - Math.random()).slice(0, 8);
+
+        return randomGuestBook;
       })
     }, 3000)
   }, [setGuestBook]);

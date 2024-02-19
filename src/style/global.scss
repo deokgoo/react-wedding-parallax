@@ -1,21 +1,8 @@
-@font-face {
-  font-family: 'CroissantOne';
-  src: local('CroissantOne'), url('../../public/fonts/CroissantOne.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  preload: true;
-}
-
-@font-face {
-  font-family: 'NanumPenScript';
-  src: local('NanumPenScript'), url('../../public/fonts/NanumPenScript.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  preload: true;
-}
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap');
 
 body {
-  font-family: 'CroissantOne', sans-serif;
+  font-family: 'Croissant One', sans-serif;
   font-size: 16px;
   color: #333;
   line-height: 1.5;
