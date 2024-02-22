@@ -37,10 +37,7 @@ const GuestBook = () => {
           }
         })
 
-        // newGuestBook 에서 랜덤으로 한 다음 8개를 뽑아서 반환한다.
-        const randomGuestBook = newGuestBook.sort(() => Math.random() - Math.random()).slice(0, 8);
-
-        return randomGuestBook;
+        return newGuestBook;
       })
     }, 3000)
   }, [setGuestBook]);
