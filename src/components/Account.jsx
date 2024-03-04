@@ -38,7 +38,7 @@ const items = [
   {
     key: '5',
     label: '신랑측 아버님 김준일 계좌번호',
-    children: <BankAccountItem bankName={"국민은행"} accountNumber={"573101045897"} iconPath={"/images/icon/kb-icon.webp"} />
+    children: <BankAccountItem bankName={"국민은행"} accountNumber={"57310101045897"} iconPath={"/images/icon/kb-icon.webp"} />
   },
   {
     key: '6',
