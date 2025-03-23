@@ -39,7 +39,6 @@ const data = [
   {
     relation: '신랑 어머니',
     name: '박성미',
-    phoneNumber: '010-4556-5698',
     color: '#668EAA',
   }
 ]

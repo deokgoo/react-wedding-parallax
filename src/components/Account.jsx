@@ -40,11 +40,6 @@ const items = [
     label: '신랑측 아버님 김태중 계좌번호',
     children: <BankAccountItem bankName={"국민"} accountNumber={"12050204226245"} iconPath={"/images/icon/kb-icon.webp"} />
   },
-  {
-    key: '6',
-    label: '신랑측 어머님 박성미 계좌번호',
-    children: <BankAccountItem bankName={"농협"} accountNumber={"3560651263933"} iconPath={"/images/icon/nh-icon.webp"} />,
-  },
 ];
 
 const Account = () => {
