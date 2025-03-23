@@ -24,7 +24,6 @@ const images = [
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist11.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist12.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist13.JPEG?alt=media',
-  'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist14.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist15.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist16.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist17.JPEG?alt=media',
@@ -35,9 +34,11 @@ const Gallery = () => {
   const swiperRef = useRef(null);
   const previewImages = images.slice(0, 8);
   const otherImages = images.filter(img => !previewImages.includes(img));
+  otherImages.push(
+    'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist14.JPEG?alt=media',
+  )
 
   const handlePreivewVisible = (visible) => {
-    console.log(visible);
     swiperRef.current.swiper.autoplay.stop();
 
     if (visible) swiperRef.current.swiper.autoplay.stop();
@@ -61,11 +62,11 @@ const Gallery = () => {
           slideShadows: true
         }}
         pagination={true}
-        autoplay={{
-          delay: 2000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2000,
+        //   pauseOnMouseEnter: true,
+        //   disableOnInteraction: false,
+        // }}
         initialSlide={1}
         loop={true}
         modules={[EffectCoverflow, Autoplay]}
@@ -86,7 +87,7 @@ const Gallery = () => {
           {previewImages
             .map((src, idx) =>
               <Image
-                className={styles.swiperImg}
+                className={styles.previewImg}
                 src={src}
                 alt={src + idx}
                 preview={{ onVisibleChange: handlePreivewVisible }}

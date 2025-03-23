@@ -43,6 +43,7 @@
       
       img {
         width: 100%;
+        object-fit: contain;
       }
 
       &:global(.touchHold),
@@ -75,7 +76,11 @@
   justify-content: center;
 
   .swiperImg {
-    
+    object-fit: contain;
   }
+
+  // .previewImg {
+  //   background-color: black;
+  // }
 }
 
