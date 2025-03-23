@@ -3,7 +3,7 @@ import { NavermapsProvider } from 'react-naver-maps';
 import './style/global.scss';
 
 function App() {
-  const naverMapClientId = 'tw4a68fkng';
+  const naverMapClientId = '6ygkj3aqk9';
 
   return (
     <NavermapsProvider
