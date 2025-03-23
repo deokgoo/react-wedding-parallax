@@ -107,14 +107,6 @@ const Place = () => {
       </div>
       <div className={styles.infoContainer} ref={infoContainerRef}>
         <div className={styles.item}>
-          <Tooltip title="Click!" trigger="click" defaultOpen open={!drawerOpen} placement='top' autoAdjustOverflow={false}>
-            <div className={styles.contentWrapper} onClick={onOpen} style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
-              <Tag color="#86d6fb" style={{ fontSize: '14px', fontFamily: 'Croissant One', fontWeight: '700', padding: '4px 8px' }}>부산, 대전 전세버스 안내 <RightCircleFilled /> </Tag>
-            </div>
-          </Tooltip>
-
-        </div>
-        <div className={styles.item}>
           <div className={styles.iconWrapper}>
             <BusIcon width={20} height={20} />
           </div>
@@ -145,45 +137,6 @@ const Place = () => {
         </div>
       </div>
     </div>
-    <Drawer title="부산 버스 안내 <= 이거 어떻게 할지" placement="right" onClose={onClose} closeIcon={<ArrowRightOutlined />} open={drawerOpen} styles={{ header: { paddingLeft: '12px' } }}>
-      <Space direction="vertical" size={"large"}>
-        <Card type="inner" title="부산" style={{ width: 'calc(100vw - 48px)' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <p style={{ display: 'flex', alignItems: 'center', marginBottom: '0' }}><Tag color="blue">장소</Tag> 동래지하철역 3번 출구 공영주차장 입구</p>
-            <p style={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}><Tag color="cyan">시간</Tag> 24.03.09(토) 07:00</p>
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <Space size="small">
-                <Button onClick={() => window.href = 'https://map.naver.com/p/entry/place/16817831?c=18.14,0,0,0,dh'} style={{ width: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <img src={NaverIcon} width="20" height="20" alt="네이버 공유" />
-                  네이버 지도
-                </Button>
-                <Button onClick={() => window.href = 'https://kko.to/Ed5Xj0Bxzf'} style={{ width: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <img src={KakaoIcon} width="20" height="20" alt="카카오 공유" />
-                  카카오 지도
-                </Button>
-              </Space>
-            </div>
-          </div>
-        </Card>
-        <Card type="inner" title="대전" style={{ width: 'calc(100vw - 48px)' }}>
-          <p style={{ display: 'flex', alignItems: 'center' }}><Tag color="blue">장소</Tag> 둔산중로 108 한국토지공사 대전충남지역본부 사옥</p>
-          <p style={{ display: 'flex', alignItems: 'center' }}><Tag color="cyan">시간</Tag> 24.03.09(토) 10:00</p>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <Space size="small">
-              <Button onClick={() => window.href = 'https://map.naver.com/p/entry/place/13299021?c=20.00,0,0,0,dh'} style={{ width: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={NaverIcon} width="20" height="20" alt="네이버 공유" />
-                네이버 지도
-              </Button>
-              <Button onClick={() => window.href = 'https://kko.to/ezMmREjkCd'} style={{ width: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={KakaoIcon} width="20" height="20" alt="카카오 공유" />
-                카카오 지도
-              </Button>
-            </Space>
-          </div>
-        </Card>
-      </Space>
-
-    </Drawer>
   </>
 }
 
