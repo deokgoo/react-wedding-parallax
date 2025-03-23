@@ -79,7 +79,7 @@ const Invitation = () => {
       <img src="https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Fmain-2.JPEG?alt=media" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
       <hr />
       <p className={styles.parent}>
-        <span className={styles.name}>김태중</span> • <span className={styles.name}>박성미</span> 의 아들 <span className={styles.name}>김정행</span><br />
+        <span className={styles.name}>김태중</span> • <span className={styles.name}><img src="https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Fflower-r.png?alt=media" alt="flower decoration" width={20} height={20}></img>박성미</span> 의 아들 <span className={styles.name}>김정행</span><br />
         <span className={styles.name}>고인지</span> • <span className={styles.name}>김정아</span> 의 딸 <span className={styles.name}>고윤미</span><br />
       </p>
       <Button icon={<PhoneOutlined />} primarycolor={'#D1C8C8'} onClick={() => setIsModalOpen(true)} style={{ backgroundColor: '#f8dede', border: '1px solid white' }}>
@@ -92,12 +92,15 @@ const Invitation = () => {
           dataSource={data}
           renderItem={(item) => (
             <List.Item
-              actions={[<a href={`tel:${item.phoneNumber}`} type='tel'><PhoneOutlined color={item.color} /></a>, <a href={`sms:${item.phoneNumber}`}><MessageOutlined /></a>]}
+              actions={item.name === "박성미" ? [] : [<a href={`tel:${item.phoneNumber}`} type='tel'><PhoneOutlined color={item.color} /></a>, <a href={`sms:${item.phoneNumber}`}><MessageOutlined /></a>]}
             >
               <Skeleton avatar title={false} loading={item.loading} active>
                 <List.Item.Meta
-                  title={<>{item.name}</>}
-                  description={<div style={{ color: item.color }}>{item.relation}</div>}
+                  title={<div style={{ display: 'flex', alignItems: 'center' }}>
+                    {item.name === "박성미" ? <img src="https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Fflower-r.png?alt=media" alt="flower decoration" width={20} height={20}></img> : <div style={{ width: '0' }}></div>}
+                    {item.name}
+                  </div>}
+                  description={<div style={{ color: item.color, paddingLeft: '0' }}>{item.relation}</div>}
                 />
               </Skeleton>
             </List.Item>
