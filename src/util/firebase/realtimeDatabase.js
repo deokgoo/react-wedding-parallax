@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 
 export const readGuestBookListen = (snapShotCallback) => {
   const db = getDatabase(app);
-  const starCountRef = ref(db, 'guestbook');
+  const starCountRef = ref(db, 'guestbook-jh');
 
   onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
@@ -42,7 +42,7 @@ export const writeGuestBook = ({ username, content }) => {
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   const updates = {};
-  updates['/guestbook/' + newPostKey] = postData;
+  updates['/guestbook-jh/' + newPostKey] = postData;
 
   return update(ref(db), updates);
 }

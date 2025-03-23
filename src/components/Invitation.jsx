@@ -7,41 +7,39 @@ import styles from '../style/Invitation.module.scss';
 const data = [
   {
     relation: '신부',
-    name: '최지선',
-    phoneNumber: '010-7300-7029',
+    name: '고윤미',
+    phoneNumber: '010-3215-0144',
     color: '#CE8383',
-    img: '/images/selfi/selfi-js.webp',
   },
   {
     relation: '신랑',
-    name: '김덕구',
-    phoneNumber: '010-3076-5697',
+    name: '김정행',
+    phoneNumber: '010-8631-5698',
     color: '#668EAA',
-    img: '/images/selfi/selfi-d9.webp',
   },
   {
     relation: '신부 아버지',
-    name: '최화묵',
-    phoneNumber: '010-3409-7029',
+    name: '고인지',
+    phoneNumber: '010-3692-0144',
     color: '#CE8383',
   },
   {
     relation: '신부 어머니',
-    name: '유소영',
-    phoneNumber: '010-7409-7029',
+    name: '김정아',
+    phoneNumber: '010-3696-0144',
     color: '#CE8383',
     img: ''
   },
   {
     relation: '신랑 아버지',
-    name: '김준일',
-    phoneNumber: '010-3924-5697',
+    name: '김태중',
+    phoneNumber: '010-3833-3337',
     color: '#668EAA',
   },
   {
     relation: '신랑 어머니',
-    name: '홍상희',
-    phoneNumber: '010-2666-5697',
+    name: '박성미',
+    phoneNumber: '010-4556-5698',
     color: '#668EAA',
   }
 ]
@@ -79,11 +77,11 @@ const Invitation = () => {
         저희가 내딛는 첫 걸음에 부디 오셔서 <br />
         따뜻한 사랑으로 축복해 주십시오.
       </p>
-      <img src="/images/seo-jsd.webp" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
+      <img src="https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Fmain-2.JPEG?alt=media" alt="wedding" style={{ height: '25vh', width: '100%', objectFit: 'cover' }} />
       <hr />
       <p className={styles.parent}>
-        <span className={styles.name}>김준일</span> • <span className={styles.name}>홍상희</span> 의 장남 <span className={styles.name}>덕구</span><br />
-        <span className={styles.name}>최화묵</span> • <span className={styles.name}>유소영</span> 의 장녀 <span className={styles.name}>지선</span><br />
+        <span className={styles.name}>김태중</span> • <span className={styles.name}>박성미</span> 의 아들 <span className={styles.name}>김정행</span><br />
+        <span className={styles.name}>고인지</span> • <span className={styles.name}>김정아</span> 의 딸 <span className={styles.name}>고윤미</span><br />
       </p>
       <Button icon={<PhoneOutlined />} primarycolor={'#D1C8C8'} onClick={() => setIsModalOpen(true)} style={{ backgroundColor: '#f8dede', border: '1px solid white' }}>
         연락번호 확인
@@ -99,7 +97,6 @@ const Invitation = () => {
             >
               <Skeleton avatar title={false} loading={item.loading} active>
                 <List.Item.Meta
-                  avatar={<Avatar src={item.img} />}
                   title={<>{item.name}</>}
                   description={<div style={{ color: item.color }}>{item.relation}</div>}
                 />

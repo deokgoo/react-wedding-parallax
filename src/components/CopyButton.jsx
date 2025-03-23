@@ -15,7 +15,7 @@ const CopyButton = ({ bankName, accountNumber }) => {
   };
 
   return (
-    <AntdButton type="primary" size="small" loading={isLoading} onClick={copyToClipboard}>계좌복사</AntdButton>
+    <AntdButton type="primary" size="small" loading={isLoading} onClick={copyToClipboard} style={{ backgroundColor: '#E4B5B5', borderColor: '#E4B5B5' }}>계좌복사</AntdButton>
   );
 }
 

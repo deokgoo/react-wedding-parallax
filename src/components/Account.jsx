@@ -17,33 +17,33 @@ const BankAccountItem = ({ bankName, accountNumber, iconPath }) => {
 const items = [
   {
     key: '1',
-    label: '신부측 최지선 계좌번호',
-    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333212275886"} iconPath={"/images/icon/kakaoBank-icon.webp"} />,
+    label: '신부측 고윤미 계좌번호',
+    children: <BankAccountItem bankName={"농협"} accountNumber={"3022699014491"} iconPath={"/images/icon/nh-icon.webp"} />,
   },
   {
     key: '2',
-    label: '신랑측 김덕구 계좌번호',
-    children: <BankAccountItem bankName={"카카오뱅크"} accountNumber={"3333223353393"} iconPath={"/images/icon/kakaoBank-icon.webp"} />
+    label: '신랑측 김정행 계좌번호',
+    children: <BankAccountItem bankName={"국민"} accountNumber={"56050202180495"} iconPath={"/images/icon/kb-icon.webp"} />
   },
   {
     key: '3',
-    label: '신부측 아버님 최화묵 계좌번호',
-    children: <BankAccountItem bankName={"국민은행"} accountNumber={"699206201164"} iconPath={"/images/icon/kb-icon.webp"} />
+    label: '신부측 아버님 고인지 계좌번호',
+    children: <BankAccountItem bankName={"농협"} accountNumber={"25002013364"} iconPath={"/images/icon/nh-icon.webp"} />
   },
   {
     key: '4',
-    label: '신부측 어머님 유소영 계좌번호',
-    children: <BankAccountItem bankName={"농협"} accountNumber={"54302138361"} iconPath={"/images/icon/nh-icon.webp"} />
+    label: '신부측 어머님 김정아 계좌번호',
+    children: <BankAccountItem bankName={"농협"} accountNumber={"25002056380"} iconPath={"/images/icon/nh-icon.webp"} />
   },
   {
     key: '5',
-    label: '신랑측 아버님 김준일 계좌번호',
-    children: <BankAccountItem bankName={"국민은행"} accountNumber={"57310101045897"} iconPath={"/images/icon/kb-icon.webp"} />
+    label: '신랑측 아버님 김태중 계좌번호',
+    children: <BankAccountItem bankName={"국민"} accountNumber={"12050204226245"} iconPath={"/images/icon/kb-icon.webp"} />
   },
   {
     key: '6',
-    label: '신랑측 어머님 홍상희 계좌번호',
-    children: <BankAccountItem bankName={"부산은행"} accountNumber={"1122196794402"} iconPath={"/images/icon/bnk-icon.webp"} />,
+    label: '신랑측 어머님 박성미 계좌번호',
+    children: <BankAccountItem bankName={"농협"} accountNumber={"3560651263933"} iconPath={"/images/icon/nh-icon.webp"} />,
   },
 ];
 

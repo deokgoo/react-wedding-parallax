@@ -50,8 +50,8 @@ const Place = () => {
       <h2 className={styles.subTitle}>Location</h2>
       <h1 className={styles.title}>오시는길</h1>
 
-      <h3 className={styles.place}>해군호텔W웨딩홀 노블레스홀</h3>
-      <p className={styles.subPlace}>서울시 영등포구 가마산로 538 (신길동 2001-4)</p>
+      <h3 className={styles.place}>마벨리에 시흥점</h3>
+      <p className={styles.subPlace}>서울시 금천구 시흥대로 201 홈플러스 시흥점 7층</p>
       <div className={styles.mapContainer}>
         <div className={styles.map}>
           <MapDiv
@@ -61,24 +61,45 @@ const Place = () => {
             }}
           >
             <NaverMap
-              defaultCenter={new navermaps.LatLng(37.502330, 126.916914)}
+              defaultCenter={new navermaps.LatLng(37.452173, 126.900735)}
               defaultZoom={14}
             >
               <Marker
-                title="해군호텔W웨딩홀 노블레스홀"
+                icon={{
+                  content: `<div style="padding:4px 6px;background:rgb(255, 237, 237);border:1px solid black;border-radius:12px;font-size:12px;color:#333;position:relative;font-weight:bold;">
+                            👰🏻‍♀️❤️🤵🏻 마벨리에 시흥점
+                            <!-- 꼬리 배경 (연핑크 테두리) -->
+  <!-- 꼬리 외곽선 (검정) -->
+  <div style="position:absolute; left:50%; bottom:-11px; transform:translateX(-50%);
+              width:0; height:0;
+              border-left:11px solid transparent;
+              border-right:11px solid transparent;
+              border-top:11px solid black;"></div>
+
+  <!-- 꼬리 내부 (배경색) -->
+  <div style="position:absolute; left:50%; bottom:-10px; transform:translateX(-50%);
+              width:0; height:0;
+              border-left:10px solid transparent;
+              border-right:10px solid transparent;
+              border-top:10px solid rgb(255, 237, 237);"></div>
+                          </div>`,
+                  anchor: new navermaps.Point(60, 30)
+                }}
+                title="마벨리에 시흥점"
+                clickable={true}
                 visible={true}
-                defaultPosition={new navermaps.LatLng(37.503609, 126.915614)}
+                defaultPosition={new navermaps.LatLng(37.452173, 126.900735)}
               />
             </NaverMap>
           </MapDiv>
 
         </div>
         <div className={styles.otherMap}>
-          <a href="https://map.naver.com/p/entry/place/13088510?c=16.47,0,0,0,dh" target="_blank" rel="noreferrer">
+          <a href="https://map.naver.com/p/entry/place/1565649256?c=16.47,0,0,0,dh" target="_blank" rel="noreferrer">
             <img src={NaverIcon} width="20" height="20" alt="네이버 공유" />
             네이버 지도
           </a>
-          <a href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=8146688&q=%ED%95%B4%EA%B5%B0%ED%98%B8%ED%85%94+W%EC%9B%A8%EB%94%A9%ED%99%80&urlLevel=1&urlX=481320&urlY=1112283" target="_blank" rel="noreferrer">
+          <a href="https://map.kakao.com/?map_type=TYPE_MAP&itemId=598016577&q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90+%EC%8B%9C%ED%9D%A5%EC%A0%90&urlLevel=3&urlX=478055&urlY=1097925" target="_blank" rel="noreferrer">
             <img src={KakaoIcon} width="20" height="20" alt="카카오 공유" />
             카카오 지도
           </a>
@@ -98,8 +119,10 @@ const Place = () => {
             <BusIcon width={20} height={20} />
           </div>
           <div className={styles.contentWrapper}>
-            <p className={styles.content}>무료 셔틀버스 운행</p>
-            <p className={styles.subscription}>1호선 대방역 3번 출구 / 7호선, 신림선 보라매역 5번 출구 <br /> (예식시간 1시간 30분 전부터 15-20분 간격 운행)</p>
+            <p className={styles.content}>버스환승</p>
+            <p className={styles.subscription}>마을버스 04 / 06 / 07</p>
+            <p className={styles.content}>하차정류장</p>
+            <p className={styles.subscription}>시흥사거리 하차</p>
           </div>
         </div>
         <div className={styles.item}>
@@ -108,18 +131,7 @@ const Place = () => {
           </div>
           <div className={styles.contentWrapper}>
             <p className={styles.content}>지하철</p>
-            <p className={styles.subscription}>- 1호선 대방역(19253 정류장) 마을버스 07번 : 서울해군호텔 하차</p>
-            <p className={styles.subscription}>- 7호선 보라매역 5번 출구 &gt; 200m 영진시장삼거리 우회전 300m</p>
-            <p className={styles.subscription}>- 신림선 서울지방병무청역 2번 출구 &gt; 100m 해군회관 앞 사거리 &gt; 우회전 400m</p>
-          </div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.iconWrapper}>
-            <BusIcon width={20} height={20} />
-          </div>
-          <div className={styles.contentWrapper}>
-            <p className={styles.content}>버스</p>
-            <p className={styles.subscription}>150, 461, 500, 505, 753, 5531, 5534, 5612, 5623, 5633 강남중학교 버스정류장 하차 메가커피 방향으로 횡당보도 건너 직진 500m</p>
+            <p className={styles.subscription}>1호선 금천구청역에서 도보로 15분</p>
           </div>
         </div>
         <div className={styles.item}>
@@ -127,8 +139,8 @@ const Place = () => {
             <CarIcon width={20} height={20} />
           </div>
           <div className={styles.contentWrapper}>
-            <p className={styles.content}>승용차</p>
-            <p className={styles.subscription}>해군호텔w웨딩홀 주차장 이용(2시간 무료) </p>
+            <p className={styles.content}>자차 이용</p>
+            <p className={styles.subscription}>주차 등록 후 4시간 무료 주차 가능</p>
           </div>
         </div>
       </div>

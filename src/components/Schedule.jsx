@@ -6,10 +6,10 @@ import styles from '../style/Schedule.module.scss';
 import '../style/Flipdown.scss';
 
 const DATE_TEXT = {
-  date: "9",
+  date: "10",
   day: "Saturday",
-  month: "March",
-  year: "2024"
+  month: "May",
+  year: "2025"
 }
 
 const HeartSvg = () => (
@@ -50,7 +50,7 @@ const Schedule = () => {
   }, []);
 
   useEffect(() => {
-    var twoDaysFromNow = (new Date('2024-03-09T00:00:00').getTime()) / 1000;
+    var twoDaysFromNow = (new Date('2025-05-10T00:00:00').getTime()) / 1000;
     const flipdown = new FlipDown(twoDaysFromNow)
 
     flipdown.start();
@@ -59,7 +59,7 @@ const Schedule = () => {
   const countDownComment = () => {
     // 몇 일 남았는지 계산합니다. 
     const now = new Date();
-    const eventDate = new Date('2024-03-09T00:00:00');
+    const eventDate = new Date('2025-05-10T00:00:00');
     const diff = eventDate.getTime() - now.getTime();
     const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
@@ -88,7 +88,7 @@ const Schedule = () => {
         <div id="flipdown" className="flipdown"></div>
       </div>
       <div className={styles.countDownWrapper}>
-        덕구 <HeartIcon style={{ color: 'hotpink' }} /> 지선의 결혼식이
+        정행 <HeartIcon style={{ color: 'hotpink' }} /> 윤미의 결혼식이
         <span className={styles.strength}>{countDownComment()}</span>일 남았습니다.
       </div>
 
