@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Modal, List, Skeleton, Avatar } from 'antd';
+import { Button, Modal, List, Skeleton } from 'antd';
 import { PhoneOutlined, MessageOutlined } from '@ant-design/icons';
 
 import styles from '../style/Invitation.module.scss';

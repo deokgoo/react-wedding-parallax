@@ -145,7 +145,7 @@ const Place = () => {
         </div>
       </div>
     </div>
-    <Drawer title="부산, 대전 버스 안내" placement="right" onClose={onClose} closeIcon={<ArrowRightOutlined />} open={drawerOpen} styles={{ header: { paddingLeft: '12px' } }}>
+    <Drawer title="부산 버스 안내 <= 이거 어떻게 할지" placement="right" onClose={onClose} closeIcon={<ArrowRightOutlined />} open={drawerOpen} styles={{ header: { paddingLeft: '12px' } }}>
       <Space direction="vertical" size={"large"}>
         <Card type="inner" title="부산" style={{ width: 'calc(100vw - 48px)' }}>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
