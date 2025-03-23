@@ -28,15 +28,13 @@ const images = [
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist16.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist17.JPEG?alt=media',
   'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist18.JPEG?alt=media',
+  'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist19.JPEG?alt=media',
 ].sort(() => Math.random() - 0.5);
 
 const Gallery = () => {
   const swiperRef = useRef(null);
   const previewImages = images.slice(0, 8);
   const otherImages = images.filter(img => !previewImages.includes(img));
-  otherImages.push(
-    'https://firebasestorage.googleapis.com/v0/b/wedding-e82c2.appspot.com/o/jh%2Flist14.JPEG?alt=media',
-  )
 
   const handlePreivewVisible = (visible) => {
     swiperRef.current.swiper.autoplay.stop();
