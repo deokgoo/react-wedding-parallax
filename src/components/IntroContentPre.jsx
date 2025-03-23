@@ -14,7 +14,7 @@ const IntroContent = () => {
         <WeddingRing />
       </div>
       <h2 className={styles.date}>
-        피로연 4월 26일 AM 09:00 ~ PM 18:00<br />
+        피로연 4월 26일 AM 09:00 ~ PM 06:00<br />
         <span style={{ color: '#006400', position: 'relative', top: '10px' }}>
           토평동다목적회관 <br/>
         </span> 
